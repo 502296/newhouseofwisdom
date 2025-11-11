@@ -2,108 +2,100 @@
 
 <html lang="en">
 
-<head>
+  <head>
 
-  <meta charset="UTF-8">
+    <meta charset="UTF-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Manuscript Gallery – New House of Wisdom</title>
+    <title>Gallery – New House of Wisdom</title>
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-  <style>
+  </head>
 
-    body {
+  <body data-lang="en">
 
-      background-color: #0b0b0b;
+    <header class="topbar">
 
-      color: #fff;
+      <div class="brand" data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">New House of Wisdom</div>
 
-      font-family: 'Inter', sans-serif;
+      <nav>
 
-      text-align: center;
+        <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
 
-    }
+        <a href="archive.html" data-en="Archive" data-ar="الأرشيف">Archive</a>
 
-    h1 {
+      </nav>
 
-      color: #d4af37;
+      <button id="langToggle" class="lang-btn">عربي</button>
 
-      margin-top: 40px;
-
-      text-shadow: 0 0 10px rgba(0,0,0,0.6);
-
-    }
-
-    .gallery {
-
-      display: grid;
-
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-
-      gap: 15px;
-
-      padding: 30px;
-
-      max-width: 1200px;
-
-      margin: auto;
-
-    }
-
-    .gallery img {
-
-      width: 100%;
-
-      height: 230px;
-
-      object-fit: cover;
-
-      border-radius: 8px;
-
-      border: 1px solid #444;
-
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-      cursor: pointer;
-
-    }
-
-    .gallery img:hover {
-
-      transform: scale(1.05);
-
-      box-shadow: 0 0 20px rgba(212,175,55,0.4);
-
-    }
-
-  </style>
-
-</head>
-
-<body>
-
-  <h1>📜 Abbasid Manuscript Gallery</h1>
-
-  <p>A visual archive of Baghdad’s Golden Age knowledge and heritage</p>
+    </header>
 
 
 
-  <div class="gallery">
+    <main class="page">
 
-    <img src="images/gallery/manuscript1.jpg" alt="Manuscript 1">
+      <h1 class="section-title" data-en="Manuscript & Heritage Gallery" data-ar="معرض المخطوطات والتراث">
 
-    <img src="images/gallery/manuscript2.jpg" alt="Manuscript 2">
+        Manuscript & Heritage Gallery
 
-    <img src="images/gallery/manuscript3.jpg" alt="Manuscript 3">
+      </h1>
 
-    <img src="images/gallery/manuscript4.jpg" alt="Manuscript 4">
+      <p style="text-align:center;opacity:.7" data-en="A visual collection of Baghdad’s Golden Age." data-ar="مجموعة بصرية من العصر الذهبي لبغداد."></p>
 
-    <img src="images/gallery/manuscript5.jpg" alt="Manuscript 5">
 
-  </div>
 
-</body>
+      <div class="gallery-grid">
+
+        <!-- أضف أو غيّر الأسماء حسب ما ترفع -->
+
+        <img src="images/gallery/manuscript1.jpg" alt="Manuscript 1" />
+
+        <img src="images/gallery/manuscript2.jpg" alt="Manuscript 2" />
+
+        <img src="images/gallery/manuscript3.jpg" alt="Manuscript 3" />
+
+        <img src="images/gallery/manuscript4.jpg" alt="Manuscript 4" />
+
+        <img src="images/gallery/manuscript5.jpg" alt="Manuscript 5" />
+
+        <img src="images/gallery/manuscript6.jpg" alt="Manuscript 6" />
+
+      </div>
+
+    </main>
+
+
+
+    <footer class="site-footer">© New House of Wisdom | Baghdad Digital Heritage 2025</footer>
+
+
+
+    <script>
+
+      const btn = document.getElementById("langToggle");
+
+      btn.addEventListener("click", () => {
+
+        const isEn = document.body.getAttribute("data-lang") === "en";
+
+        document.body.setAttribute("data-lang", isEn ? "ar" : "en");
+
+        document.body.style.direction = isEn ? "rtl" : "ltr";
+
+        btn.textContent = isEn ? "EN" : "عربي";
+
+        document.querySelectorAll("[data-en]").forEach((el) => {
+
+          el.textContent = isEn ? el.dataset.ar : el.dataset.en;
+
+        });
+
+      });
+
+    </script>
+
+  </body>
 
 </html>
