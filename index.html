@@ -18,6 +18,8 @@
 
       --light: #fffaf0;
 
+      --bg: #1a1209; /* لون قريب من الصورة */
+
     }
 
     * {
@@ -110,6 +112,16 @@
 
       width: 100%;
 
+      background-color: var(--bg); /* جوانب بلون ثابت */
+
+      background-image: url("images/house-of-wisdom.jpg");
+
+      background-repeat: no-repeat;
+
+      background-position: center top;
+
+      background-size: contain;     /* أهم شي: لا قص */
+
       display: flex;
 
       align-items: center;
@@ -119,54 +131,6 @@
       text-align: center;
 
       color: var(--light);
-
-      overflow: hidden;
-
-    }
-
-
-
-    /* الخلفية المموّهة تملى الشاشة */
-
-    .hero::before {
-
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background: url("images/house-of-wisdom.jpg") center center no-repeat;
-
-      background-size: cover;
-
-      filter: blur(18px);
-
-      transform: scale(1.1);
-
-      opacity: 0.65;
-
-      z-index: 0;
-
-    }
-
-
-
-    /* الصورة الأصلية الكاملة */
-
-    .hero::after {
-
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background: url("images/house-of-wisdom.jpg") center top no-repeat;
-
-      background-size: contain;      /* أهم سطر: يخلّيها كاملة زي الموبايل */
-
-      z-index: 1;
 
     }
 
@@ -180,9 +144,7 @@
 
       inset: 0;
 
-      background: radial-gradient(circle, rgba(0,0,0,0.05), rgba(0,0,0,0.35));
-
-      z-index: 2;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.55));
 
     }
 
@@ -192,7 +154,7 @@
 
       position: relative;
 
-      z-index: 3;
+      z-index: 2;
 
       max-width: 700px;
 
@@ -271,10 +233,6 @@
       padding: 1rem 0;
 
       font-size: 0.9rem;
-
-      position: relative;
-
-      z-index: 10;
 
     }
 
