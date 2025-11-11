@@ -2,100 +2,152 @@
 
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Gallery – New House of Wisdom</title>
+  <title>Gallery – New House of Wisdom</title>
 
-    <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css" />
 
-  </head>
+</head>
 
-  <body data-lang="en">
+<body class="dark-body">
 
-    <header class="topbar">
+  <header class="topbar">
 
-      <div class="brand" data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">New House of Wisdom</div>
+    <div class="brand"><a href="index.html">New House of Wisdom</a></div>
 
-      <nav>
+    <div class="actions">
 
-        <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
-
-        <a href="archive.html" data-en="Archive" data-ar="الأرشيف">Archive</a>
-
-      </nav>
+      <a href="index.html" class="ghost-btn">Back</a>
 
       <button id="langToggle" class="lang-btn">عربي</button>
 
-    </header>
+    </div>
+
+  </header>
 
 
 
-    <main class="page">
+  <main class="gallery-wrap" data-lang="en">
 
-      <h1 class="section-title" data-en="Manuscript & Heritage Gallery" data-ar="معرض المخطوطات والتراث">
+    <section class="gallery-head">
+
+      <h1 data-en="Manuscript & Heritage Gallery" data-ar="معرض المخطوطات والتراث">
 
         Manuscript & Heritage Gallery
 
       </h1>
 
-      <p style="text-align:center;opacity:.7" data-en="A visual collection of Baghdad’s Golden Age." data-ar="مجموعة بصرية من العصر الذهبي لبغداد."></p>
+      <p data-en="High-resolution visuals from Abbasid Baghdad, the Mustansiriya, and related collections."
+
+         data-ar="صور عالية الدقة من بغداد العباسية، والمدرسة المستنصرية، والمجموعات المرتبطة.">
+
+        High-resolution visuals from Abbasid Baghdad, the Mustansiriya, and related collections.
+
+      </p>
+
+    </section>
 
 
 
-      <div class="gallery-grid">
+    <section class="gallery-grid">
 
-        <!-- أضف أو غيّر الأسماء حسب ما ترفع -->
+      <!-- كرر هذه البطاقات مع تغيير الصورة -->
 
-        <img src="images/gallery/manuscript1.jpg" alt="Manuscript 1" />
+      <article class="gallery-card">
 
-        <img src="images/gallery/manuscript2.jpg" alt="Manuscript 2" />
+        <img src="images/Baghdad_Ms_001.jpg" alt="Manuscript 1" />
 
-        <img src="images/gallery/manuscript3.jpg" alt="Manuscript 3" />
+        <div class="g-meta">
 
-        <img src="images/gallery/manuscript4.jpg" alt="Manuscript 4" />
+          <h3 data-en="Manuscript 1" data-ar="مخطوطة 1">Manuscript 1</h3>
 
-        <img src="images/gallery/manuscript5.jpg" alt="Manuscript 5" />
+          <a href="images/Baghdad_Ms_001.jpg" download class="download-btn small">Download</a>
 
-        <img src="images/gallery/manuscript6.jpg" alt="Manuscript 6" />
+        </div>
 
-      </div>
-
-    </main>
+      </article>
 
 
 
-    <footer class="site-footer">© New House of Wisdom | Baghdad Digital Heritage 2025</footer>
+      <article class="gallery-card">
+
+        <img src="images/Baghdad_Ms_002.jpg" alt="Manuscript 2" />
+
+        <div class="g-meta">
+
+          <h3 data-en="Manuscript 2" data-ar="مخطوطة 2">Manuscript 2</h3>
+
+          <a href="images/Baghdad_Ms_002.jpg" download class="download-btn small">Download</a>
+
+        </div>
+
+      </article>
 
 
 
-    <script>
+      <!-- مثال لصورة عامة للمدرسة -->
 
-      const btn = document.getElementById("langToggle");
+      <article class="gallery-card">
 
-      btn.addEventListener("click", () => {
+        <img src="images/mustansiriya.jpg" alt="Mustansiriya" />
 
-        const isEn = document.body.getAttribute("data-lang") === "en";
+        <div class="g-meta">
 
-        document.body.setAttribute("data-lang", isEn ? "ar" : "en");
+          <h3 data-en="Mustansiriya view" data-ar="مشهد المستنصرية">Mustansiriya view</h3>
 
-        document.body.style.direction = isEn ? "rtl" : "ltr";
+          <a href="images/mustansiriya.jpg" download class="download-btn small">Download</a>
 
-        btn.textContent = isEn ? "EN" : "عربي";
+        </div>
 
-        document.querySelectorAll("[data-en]").forEach((el) => {
+      </article>
 
-          el.textContent = isEn ? el.dataset.ar : el.dataset.en;
+    </section>
 
-        });
+  </main>
+
+
+
+  <footer class="site-footer">
+
+    © New House of Wisdom | Baghdad Digital Heritage 2025
+
+  </footer>
+
+
+
+  <script>
+
+    const langBtn = document.getElementById('langToggle');
+
+    const wrap = document.querySelector('.gallery-wrap');
+
+
+
+    langBtn.addEventListener('click', () => {
+
+      const isEn = wrap.getAttribute('data-lang') === 'en';
+
+      wrap.setAttribute('data-lang', isEn ? 'ar' : 'en');
+
+      langBtn.textContent = isEn ? 'EN' : 'عربي';
+
+
+
+      document.querySelectorAll('[data-en]').forEach(el => {
+
+        el.textContent = isEn ? el.getAttribute('data-ar') : el.getAttribute('data-en');
 
       });
 
-    </script>
+    });
 
-  </body>
+  </script>
+
+</body>
 
 </html>
