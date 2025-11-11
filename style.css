@@ -16,17 +16,9 @@
 
 
 
-/* ==========================================
-
-   BODY (الصفحة الرئيسية بخلفية الصورة الأصلية)
-
-========================================== */
-
 body {
 
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-  background: url("images/house-horizontal.jpg") center center / cover no-repeat fixed;
 
   color: #fff;
 
@@ -34,17 +26,119 @@ body {
 
   line-height: 1.6;
 
+  background-color: #000;
+
 }
 
 
 
 /* ==========================================
 
-   HEADER (الاسم + اللغة)
+   FULL HERO BACKGROUND (الصفحة الرئيسية)
+
+========================================== */
+
+.hero {
+
+  background: url("images/house-horizontal.jpg") center center / cover no-repeat fixed;
+
+  height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 2rem;
+
+}
+
+
+
+.hero h1 {
+
+  font-size: 3rem;
+
+  font-weight: 800;
+
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+
+  margin-bottom: 1rem;
+
+}
+
+
+
+.hero p {
+
+  font-size: 1.1rem;
+
+  max-width: 700px;
+
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+
+  margin-bottom: 2rem;
+
+}
+
+
+
+/* زر الدخول للأرشيف */
+
+.btn-gold {
+
+  background: #d4af37;
+
+  border: none;
+
+  color: #111;
+
+  font-weight: 600;
+
+  border-radius: 999px;
+
+  padding: 0.7rem 1.8rem;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: background 0.3s ease, transform 0.2s ease;
+
+}
+
+
+
+.btn-gold:hover {
+
+  background: #b9962f;
+
+  transform: translateY(-2px);
+
+}
+
+
+
+/* ==========================================
+
+   HEADER (أعلى الصفحة)
 
 ========================================== */
 
 .topbar {
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
 
   display: flex;
 
@@ -54,13 +148,9 @@ body {
 
   padding: 1.2rem 1.8rem;
 
-  background: rgba(0, 0, 0, 0.5);
+  background: transparent;
 
-  position: sticky;
-
-  top: 0;
-
-  z-index: 50;
+  z-index: 10;
 
 }
 
@@ -74,13 +164,13 @@ body {
 
   color: #f5f5f5;
 
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+
 }
 
 
 
-.lang-btn,
-
-.back-btn {
+.lang-btn {
 
   background: #d4af37;
 
@@ -102,93 +192,7 @@ body {
 
 
 
-.lang-btn:hover,
-
-.back-btn:hover {
-
-  background: #b9962f;
-
-}
-
-
-
-/* ==========================================
-
-   HERO SECTION
-
-========================================== */
-
-.hero,
-
-.content-wrapper {
-
-  background: rgba(0, 0, 0, 0.45);
-
-  padding: 2rem;
-
-  border-radius: 12px;
-
-  max-width: 900px;
-
-  margin: 4rem auto;
-
-  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
-
-  text-align: center;
-
-}
-
-
-
-.hero h1 {
-
-  font-size: 2.8rem;
-
-  font-weight: 800;
-
-  margin-bottom: 0.8rem;
-
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
-
-}
-
-
-
-.hero p {
-
-  font-size: 1rem;
-
-  color: rgba(255, 255, 255, 0.9);
-
-  margin-bottom: 1.5rem;
-
-}
-
-
-
-.btn-gold {
-
-  background: #d4af37;
-
-  border: none;
-
-  color: #111;
-
-  font-weight: 600;
-
-  border-radius: 999px;
-
-  padding: 0.6rem 1.6rem;
-
-  cursor: pointer;
-
-  transition: background 0.2s ease;
-
-}
-
-
-
-.btn-gold:hover {
+.lang-btn:hover {
 
   background: #b9962f;
 
@@ -206,297 +210,13 @@ body {
 
   text-align: center;
 
-  font-size: 0.8rem;
-
-  color: rgba(255, 255, 255, 0.8);
-
-  padding: 1.5rem 0 2rem;
-
-}
-
-
-
-/* ==========================================
-
-   ARCHIVE PAGE
-
-========================================== */
-
-.archive-page {
-
-  background: #f7f2e8;
-
-  color: #222;
-
-  line-height: 1.7;
-
-}
-
-
-
-.archive-inner {
-
-  max-width: 1000px;
-
-  margin: 3rem auto;
-
-  background: #fffdf6;
-
-  border: 1px solid #e5d6b0;
-
-  border-radius: 16px;
-
-  padding: 2rem 2rem;
-
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-
-}
-
-
-
-.archive-title {
-
-  font-size: 2rem;
-
-  text-align: center;
-
-  margin-bottom: 0.5rem;
-
-}
-
-
-
-.archive-subtitle {
-
-  text-align: center;
-
-  margin-bottom: 1.5rem;
-
-  color: #6c6654;
-
-  font-size: 0.95rem;
-
-}
-
-
-
-.archive-section {
-
-  margin-bottom: 1.6rem;
-
-  background: #fffaf1;
-
-  border: 1px solid #e6d4a8;
-
-  border-radius: 12px;
-
-  padding: 1.2rem 1rem;
-
-}
-
-
-
-.archive-section h2 {
-
-  margin-bottom: 0.25rem;
-
-  color: #2b2926;
-
-}
-
-
-
-.archive-section p {
-
-  margin-bottom: 0.7rem;
-
-  font-size: 0.9rem;
-
-  color: #4f4c44;
-
-}
-
-
-
-.resource-row {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  padding: 0.45rem 0;
-
-  border-bottom: 1px solid #eee2c9;
-
-}
-
-
-
-.resource-row:last-child {
-
-  border-bottom: none;
-
-}
-
-
-
-.resource-name {
-
   font-size: 0.85rem;
 
-  color: #2b2926;
+  color: rgba(255, 255, 255, 0.85);
 
-}
+  padding: 1rem 0 2rem;
 
-
-
-.download-btn {
-
-  background: #d4b25f;
-
-  color: #fff;
-
-  border: none;
-
-  border-radius: 999px;
-
-  padding: 0.35rem 1.1rem;
-
-  font-size: 0.8rem;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: background 0.2s ease;
-
-}
-
-
-
-.download-btn:hover {
-
-  background: #b38c3a;
-
-}
-
-
-
-/* ==========================================
-
-   GALLERY PAGE
-
-========================================== */
-
-.gallery-page {
-
-  background: #f7f2e8;
-
-  color: #222;
-
-}
-
-
-
-.gallery-inner {
-
-  max-width: 1100px;
-
-  margin: 3rem auto;
-
-  background: #fffdf6;
-
-  border: 1px solid #e5d6b0;
-
-  border-radius: 16px;
-
-  padding: 2rem 2rem;
-
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-
-}
-
-
-
-.gallery-title {
-
-  text-align: center;
-
-  font-size: 2rem;
-
-  margin-bottom: 0.5rem;
-
-  color: #2a2a2a;
-
-}
-
-
-
-.gallery-subtitle {
-
-  text-align: center;
-
-  color: #6c6654;
-
-  margin-bottom: 1.5rem;
-
-}
-
-
-
-.gallery-grid {
-
-  display: grid;
-
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-
-  gap: 1.2rem;
-
-}
-
-
-
-.gallery-card {
-
-  background: #fffaf1;
-
-  border: 1px solid #e4d3a8;
-
-  border-radius: 14px;
-
-  padding: 0.8rem;
-
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-
-  text-align: center;
-
-  transition: transform 0.2s ease;
-
-}
-
-
-
-.gallery-card:hover {
-
-  transform: translateY(-4px);
-
-}
-
-
-
-.gallery-card img {
-
-  width: 100%;
-
-  height: 150px;
-
-  object-fit: cover;
-
-  border-radius: 10px;
-
-  margin-bottom: 0.7rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 
 }
 
@@ -510,49 +230,27 @@ body {
 
 @media (max-width: 768px) {
 
-  .hero,
+  .hero h1 {
 
-  .content-wrapper {
-
-    margin: 2rem 1rem;
-
-    padding: 1.5rem;
+    font-size: 2rem;
 
   }
 
 
 
-  .archive-inner,
+  .hero p {
 
-  .gallery-inner {
+    font-size: 0.95rem;
 
-    padding: 1.5rem;
-
-  }
-
-
-
-  .gallery-grid {
-
-    grid-template-columns: 1fr;
+    padding: 0 1rem;
 
   }
 
 
 
-  .resource-row {
+  .btn-gold {
 
-    flex-direction: column;
-
-    align-items: flex-start;
-
-  }
-
-
-
-  .download-btn {
-
-    margin-top: 0.4rem;
+    padding: 0.6rem 1.4rem;
 
   }
 
