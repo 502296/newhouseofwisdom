@@ -14,49 +14,67 @@
 
 </head>
 
-<body class="archive-page">
+<body class="dark-body">
 
   <header class="topbar">
 
-    <a href="index.html" class="brand">New House of Wisdom</a>
+    <div class="brand"><a href="index.html">New House of Wisdom</a></div>
 
-    <a href="#" id="langToggle" class="lang-btn">عربي</a>
+    <div class="actions">
+
+      <a href="index.html" class="ghost-btn">Back</a>
+
+      <button id="langToggle" class="lang-btn">عربي</button>
+
+    </div>
 
   </header>
 
 
 
-  <main class="archive-container">
+  <main class="archive-wrap" data-lang="en">
 
-    <h1 id="archTitle">Archive Sections</h1>
+    <section class="archive-hero">
 
-    <p id="archSubtitle" class="arch-sub">
+      <h1 data-en="Digital Archive" data-ar="الأرشيف الرقمي">Digital Archive</h1>
 
-      Curated digital collections: translations, manuscripts, and the Mustansiriya heritage.
+      <p data-en="Curated materials from Baghdad’s Abbasid and Mustansiriya heritage." data-ar="مواد رقمية مختارة من التراث العباسي والمدرسة المستنصرية.">
 
-    </p>
+        Curated materials from Baghdad’s Abbasid and Mustansiriya heritage.
+
+      </p>
+
+    </section>
 
 
 
-    <section class="cards">
+    <section class="archive-sections">
 
-      <!-- 1) ترجمات -->
+      <!-- Section 1 -->
 
-      <article class="card">
+      <div class="archive-card">
 
-        <h2 id="card1title">Translations & Scientific Texts</h2>
+        <h2 data-en="Translations & Scientific Texts" data-ar="الترجمات والنصوص العلمية">
 
-        <p id="card1desc">Texts translated in Baghdad during the Golden Age.</p>
+          Translations & Scientific Texts
 
-        <ul class="file-list">
+        </h2>
 
-          <!-- ملاحظة: ضع الملفات في مجلد files/ وغيّر الاسم -->
+        <p data-en="Texts translated in Baghdad during the Golden Age." data-ar="نصوص تُرجمت في بغداد خلال العصر الذهبي.">
+
+          Texts translated in Baghdad during the Golden Age.
+
+        </p>
+
+        <ul class="download-list">
+
+          <!-- غيّر الروابط لأسماء ملفاتك الحقيقية -->
 
           <li>
 
             <span>Euclid_Arabic_Intro.pdf</span>
 
-            <a href="files/Euclid_Arabic_Intro.pdf" download class="download-btn">Download</a>
+            <a href="files/Euclid_Arabic_Intro.pdf" class="download-btn" download>Download</a>
 
           </li>
 
@@ -64,31 +82,39 @@
 
             <span>Galen_Medicine_Notes.pdf</span>
 
-            <a href="files/Galen_Medicine_Notes.pdf" download class="download-btn">Download</a>
+            <a href="files/Galen_Medicine_Notes.pdf" class="download-btn" download>Download</a>
 
           </li>
 
         </ul>
 
-      </article>
+      </div>
 
 
 
-      <!-- 2) مخطوطات -->
+      <!-- Section 2 -->
 
-      <article class="card">
+      <div class="archive-card">
 
-        <h2 id="card2title">Manuscripts</h2>
+        <h2 data-en="Manuscripts" data-ar="المخطوطات">
 
-        <p id="card2desc">High-quality digitized manuscripts, indexed by topic.</p>
+          Manuscripts
 
-        <ul class="file-list">
+        </h2>
+
+        <p data-en="High-quality digitized manuscripts, indexed by topic, date, and author." data-ar="مخطوطات رقمية عالية الجودة، مفهرسة حسب الموضوع والتاريخ والمؤلف.">
+
+          High-quality digitized manuscripts, indexed by topic, date, and author.
+
+        </p>
+
+        <ul class="download-list">
 
           <li>
 
             <span>Baghdad_Ms_001.jpg</span>
 
-            <a href="files/Baghdad_Ms_001.jpg" download class="download-btn">Download</a>
+            <a href="images/Baghdad_Ms_001.jpg" class="download-btn" download>Download</a>
 
           </li>
 
@@ -96,31 +122,41 @@
 
             <span>Baghdad_Ms_002.jpg</span>
 
-            <a href="files/Baghdad_Ms_002.jpg" download class="download-btn">Download</a>
+            <a href="images/Baghdad_Ms_002.jpg" class="download-btn" download>Download</a>
 
           </li>
 
         </ul>
 
-      </article>
+      </div>
 
 
 
-      <!-- 3) المستنصرية -->
+      <!-- Section 3 -->
 
-      <article class="card">
+      <div class="archive-card">
 
-        <h2 id="card3title">Mustansiriya Heritage</h2>
+        <h2 data-en="Mustansiriya Heritage" data-ar="تراث المدرسة المستنصرية">
 
-        <p id="card3desc">Visual and textual materials about the Mustansiriya School.</p>
+          Mustansiriya Heritage
 
-        <ul class="file-list">
+        </h2>
+
+        <p data-en="Visual and textual materials about the Mustansiriya School on the Tigris."
+
+           data-ar="مواد بصرية ونصية عن المدرسة المستنصرية على دجلة.">
+
+          Visual and textual materials about the Mustansiriya School on the Tigris.
+
+        </p>
+
+        <ul class="download-list">
 
           <li>
 
             <span>Mustansiriya_Photos.zip</span>
 
-            <a href="files/Mustansiriya_Photos.zip" download class="download-btn">Download</a>
+            <a href="files/Mustansiriya_Photos.zip" class="download-btn" download>Download</a>
 
           </li>
 
@@ -128,13 +164,13 @@
 
             <span>Mustansiriya_History.pdf</span>
 
-            <a href="files/Mustansiriya_History.pdf" download class="download-btn">Download</a>
+            <a href="files/Mustansiriya_History.pdf" class="download-btn" download>Download</a>
 
           </li>
 
         </ul>
 
-      </article>
+      </div>
 
     </section>
 
@@ -142,7 +178,7 @@
 
 
 
-  <footer class="footer">
+  <footer class="site-footer">
 
     © New House of Wisdom | Baghdad Digital Heritage 2025
 
@@ -152,111 +188,29 @@
 
   <script>
 
-    // سويت نفس سويتش اللغة هنا
+    // نفس زر اللغة اللي بالصفحة الرئيسية
 
-    const langBtn = document.getElementById("langToggle");
+    const langBtn = document.getElementById('langToggle');
 
-    const archTitle = document.getElementById("archTitle");
+    const root = document.querySelector('.archive-wrap');
 
-    const archSubtitle = document.getElementById("archSubtitle");
 
-    const c1t = document.getElementById("card1title");
 
-    const c1d = document.getElementById("card1desc");
+    langBtn.addEventListener('click', () => {
 
-    const c2t = document.getElementById("card2title");
+      const isEn = root.getAttribute('data-lang') === 'en';
 
-    const c2d = document.getElementById("card2desc");
+      root.setAttribute('data-lang', isEn ? 'ar' : 'en');
 
-    const c3t = document.getElementById("card3title");
+      langBtn.textContent = isEn ? 'EN' : 'عربي';
 
-    const c3d = document.getElementById("card3desc");
 
 
+      document.querySelectorAll('[data-en]').forEach(el => {
 
-    let current = "en";
+        el.textContent = isEn ? el.getAttribute('data-ar') : el.getAttribute('data-en');
 
-
-
-    langBtn.addEventListener("click", (e) => {
-
-      e.preventDefault();
-
-      if (current === "en") {
-
-        current = "ar";
-
-        document.documentElement.setAttribute("dir", "rtl");
-
-        document.body.classList.add("rtl");
-
-
-
-        archTitle.textContent = "أقسام الأرشيف";
-
-        archSubtitle.textContent = "مجموعات رقمية مختارة: الترجمة، المخطوطات، والمستصرية.";
-
-
-
-        c1t.textContent = "الترجمات والنصوص العلمية";
-
-        c1d.textContent = "نصوص تُرجمت في بغداد زمن الازدهار العباسي.";
-
-
-
-        c2t.textContent = "المخطوطات";
-
-        c2d.textContent = "مخطوطات رقمية عالية الدقة، مفهرسة حسب الموضوع.";
-
-
-
-        c3t.textContent = "تراث المدرسة المستنصرية";
-
-        c3d.textContent = "مواد بصرية ونصية عن المدرسة المستنصرية على دجلة.";
-
-
-
-        langBtn.textContent = "EN";
-
-      } else {
-
-        current = "en";
-
-        document.documentElement.removeAttribute("dir");
-
-        document.body.classList.remove("rtl");
-
-
-
-        archTitle.textContent = "Archive Sections";
-
-        archSubtitle.textContent =
-
-          "Curated digital collections: translations, manuscripts, and the Mustansiriya heritage.";
-
-
-
-        c1t.textContent = "Translations & Scientific Texts";
-
-        c1d.textContent = "Texts translated in Baghdad during the Golden Age.";
-
-
-
-        c2t.textContent = "Manuscripts";
-
-        c2d.textContent = "High-quality digitized manuscripts, indexed by topic.";
-
-
-
-        c3t.textContent = "Mustansiriya Heritage";
-
-        c3d.textContent = "Visual and textual materials about the Mustansiriya School.";
-
-
-
-        langBtn.textContent = "عربي";
-
-      }
+      });
 
     });
 
