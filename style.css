@@ -34,7 +34,7 @@ body {
 
 /* ==========================================
 
-   FULL HERO BACKGROUND (الصفحة الرئيسية)
+   HERO SECTION (خلفية كاملة)
 
 ========================================== */
 
@@ -88,11 +88,11 @@ body {
 
 
 
-/* زر الدخول للأرشيف */
+/* زر ذهبي نحاسي */
 
 .btn-gold {
 
-  background: #d4af37;
+  background: linear-gradient(145deg, #d4af37, #b9962f);
 
   border: none;
 
@@ -108,7 +108,11 @@ body {
 
   cursor: pointer;
 
-  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
 
 }
 
@@ -116,7 +120,7 @@ body {
 
 .btn-gold:hover {
 
-  background: #b9962f;
+  background: linear-gradient(145deg, #b9962f, #d4af37);
 
   transform: translateY(-2px);
 
@@ -126,7 +130,7 @@ body {
 
 /* ==========================================
 
-   HEADER (أعلى الصفحة)
+   HEADER (الروابط العليا)
 
 ========================================== */
 
@@ -164,15 +168,53 @@ body {
 
   color: #f5f5f5;
 
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 
 }
 
 
 
+/* روابط Archive و Gallery تتحول لأزرار ذهبية */
+
+nav a {
+
+  background: linear-gradient(145deg, #d4af37, #b9962f);
+
+  color: #111;
+
+  text-decoration: none;
+
+  padding: 0.45rem 1.2rem;
+
+  border-radius: 999px;
+
+  font-weight: 600;
+
+  margin-left: 0.6rem;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+
+
+nav a:hover {
+
+  background: linear-gradient(145deg, #b9962f, #d4af37);
+
+  transform: translateY(-2px);
+
+}
+
+
+
+/* زر اللغة */
+
 .lang-btn {
 
-  background: #d4af37;
+  background: linear-gradient(145deg, #d4af37, #b9962f);
 
   color: #111;
 
@@ -186,7 +228,9 @@ body {
 
   cursor: pointer;
 
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -194,7 +238,7 @@ body {
 
 .lang-btn:hover {
 
-  background: #b9962f;
+  background: linear-gradient(145deg, #b9962f, #d4af37);
 
 }
 
@@ -251,6 +295,16 @@ body {
   .btn-gold {
 
     padding: 0.6rem 1.4rem;
+
+  }
+
+
+
+  nav a {
+
+    padding: 0.4rem 0.9rem;
+
+    font-size: 0.85rem;
 
   }
 
