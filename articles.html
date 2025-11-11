@@ -8,7 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Articles – New House of Wisdom</title>
+    <title>Archive – New House of Wisdom</title>
 
     <link rel="stylesheet" href="style.css" />
 
@@ -24,7 +24,7 @@
 
         <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
 
-        <a href="archive.html" data-en="Archive" data-ar="الأرشيف">Archive</a>
+        <a href="gallery.html" data-en="Gallery" data-ar="المعرض">Gallery</a>
 
       </nav>
 
@@ -36,13 +36,13 @@
 
     <main class="page">
 
-      <h1 class="section-title" data-en="Articles & Research" data-ar="المقالات والبحوث">
+      <h1 class="section-title" data-en="Archive Sections" data-ar="أقسام الأرشيف">Archive Sections</h1>
 
-        Articles & Research
+      <p style="text-align:center;opacity:.75" data-en="Browse the organized digital collections of Baghdad’s Golden Age." data-ar="تصفّح المجموعات الرقمية المنظَّمة لتراث بغداد في العصر العباسي.">
 
-      </h1>
+        Browse the organized digital collections of Baghdad’s Golden Age.
 
-      <p style="text-align:center;opacity:.7" data-en="Modern papers, commentary, and studies about Abbasid Baghdad." data-ar="بحوث ومقالات ودراسات حديثة عن بغداد العباسية."></p>
+      </p>
 
 
 
@@ -50,11 +50,47 @@
 
         <div class="archive-card">
 
-          <h3 data-en="The Role of the Mustansiriya" data-ar="دور المدرسة المستنصرية"></h3>
+          <h3 data-en="Translations & Scientific Texts" data-ar="الترجمات والنصوص العلمية">Translations & Scientific Texts</h3>
 
-          <p data-en="An academic paper on the curriculum and endowments." data-ar="بحث أكاديمي حول المناهج والأوقاف."></p>
+          <p data-en="Texts translated in Baghdad during the Abbasid era from Greek, Syriac and Persian sources." data-ar="نصوص تُرجمت في بغداد في العصر العباسي من اليونانية والسريانية والفارسية."></p>
 
-          <a href="files/mustansiriya-paper.pdf" data-en="Download" data-ar="تحميل">Download</a>
+          <a href="manuscripts.html" data-en="View manuscripts" data-ar="عرض المخطوطات">View manuscripts</a>
+
+        </div>
+
+
+
+        <div class="archive-card">
+
+          <h3 data-en="Books" data-ar="الكتب">Books</h3>
+
+          <p data-en="Digitized or referenced books related to Baghdad’s scholarly life." data-ar="كتب رقمية أو مُشار إليها مرتبطة بالحياة العلمية في بغداد."></p>
+
+          <a href="books.html" data-en="View books" data-ar="عرض الكتب">View books</a>
+
+        </div>
+
+
+
+        <div class="archive-card">
+
+          <h3 data-en="Articles & Research" data-ar="المقالات والبحوث">Articles & Research</h3>
+
+          <p data-en="Modern studies about the House of Wisdom, the Mustansiriya, and Abbasid scholars." data-ar="دراسات حديثة عن بيت الحكمة، والمستنصرية، والعلماء العباسيين."></p>
+
+          <a href="articles.html" data-en="View articles" data-ar="عرض المقالات">View articles</a>
+
+        </div>
+
+
+
+        <div class="archive-card">
+
+          <h3 data-en="Visual Gallery" data-ar="المعرض المرئي">Visual Gallery</h3>
+
+          <p data-en="Photos of manuscripts, sites, and artifacts related to Baghdad." data-ar="صور للمخطوطات والمواقع والآثار المرتبطة ببغداد."></p>
+
+          <a href="gallery.html" data-en="Open gallery" data-ar="فتح المعرض">Open gallery</a>
 
         </div>
 
@@ -64,7 +100,11 @@
 
 
 
-    <footer class="site-footer">© New House of Wisdom | Baghdad Digital Heritage 2025</footer>
+    <footer class="site-footer">
+
+      © New House of Wisdom | Baghdad Digital Heritage 2025
+
+    </footer>
 
 
 
@@ -72,7 +112,7 @@
 
       const btn = document.getElementById("langToggle");
 
-      btn.addEventListener("click", () => {
+      const switchLang = () => {
 
         const isEn = document.body.getAttribute("data-lang") === "en";
 
@@ -88,7 +128,9 @@
 
         });
 
-      });
+      };
+
+      btn.addEventListener("click", switchLang);
 
     </script>
 
