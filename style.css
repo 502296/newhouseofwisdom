@@ -1,44 +1,12 @@
-/* ========== Root & Base ========== */
+/* ========== RESET ========== */
 
-:root {
-
-  --nhw-bg: #0c0c0c;
-
-  --nhw-panel: rgba(15, 15, 15, 0.55);
-
-  --nhw-gold: #e2b338;
-
-  --nhw-gold-dark: #c99925;
-
-  --nhw-border: rgba(226, 179, 56, 0.35);
-
-  --nhw-white: #ffffff;
-
-  --nhw-muted: rgba(255, 255, 255, 0.75);
-
-  --nhw-black: #000;
-
-  --max-width: 1200px;
-
-  --radius-lg: 1.4rem;
-
-  --radius-md: 1rem;
-
-  --radius-sm: 0.75rem;
-
-  --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.35);
-
-}
-
-
-
-*,
-
-*::before,
-
-*::after {
+* {
 
   box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
 
 }
 
@@ -46,15 +14,11 @@
 
 body {
 
-  margin: 0;
-
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  background: #000;
+  background: #050505;
 
-  color: var(--nhw-white);
-
-  line-height: 1.5;
+  color: #fff;
 
   min-height: 100vh;
 
@@ -64,39 +28,89 @@ body {
 
 a {
 
-  text-decoration: none;
-
   color: inherit;
+
+  text-decoration: none;
 
 }
 
 
 
-/* ========== Top bar (shared) ========== */
+/* ========== GLOBAL BUTTONS ========== */
+
+.btn-gold,
+
+.lang-btn,
+
+.back-btn,
+
+.download-btn {
+
+  background: rgba(224, 173, 34, 1);
+
+  border: 1px solid rgba(224, 173, 34, 0.85);
+
+  border-radius: 999px;
+
+  color: #111;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+}
+
+
+
+.btn-gold:hover,
+
+.lang-btn:hover,
+
+.back-btn:hover,
+
+.download-btn:hover {
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+}
+
+
+
+/* ========== TOP BAR (كل الصفحات) ========== */
 
 .topbar {
 
-  position: fixed;
+  position: absolute;
 
-  top: 0;
+  top: 1.1rem;
 
-  left: 0;
+  left: 1.4rem;
 
-  right: 0;
-
-  z-index: 50;
+  right: 1.4rem;
 
   display: flex;
 
-  align-items: center;
-
   justify-content: space-between;
 
-  gap: 1.25rem;
+  align-items: center;
 
-  padding: 1.25rem 1.8rem 1.25rem;
+  z-index: 20;
 
-  background: transparent; /* ماكو شريط شفاف بعد */
+  pointer-events: none; /* علشان ما يغطي الأزرار تحت */
+
+}
+
+
+
+.topbar a,
+
+.topbar button {
+
+  pointer-events: auto;
 
 }
 
@@ -104,69 +118,43 @@ a {
 
 .brand {
 
-  font-weight: 600;
+  font-weight: 700;
 
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 
-  font-size: 1.05rem;
-
-  white-space: nowrap;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
 
 }
 
 
 
-nav {
+.lang-btn,
 
-  display: flex;
+.back-btn {
 
-  gap: 1rem;
+  padding: 0.4rem 1.4rem 0.4rem 1.4rem;
 
-  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
 
-}
+  border: 1px solid rgba(224, 173, 34, 1);
 
+  color: #f7d77c;
 
-
-button.lang-toggle,
-
-button.back-btn {
-
-  background: rgba(0, 0, 0, 0.25);
-
-  border: 1.7px solid rgba(226, 179, 56, 0.95);
-
-  color: var(--nhw-white);
-
-  border-radius: 999px;
-
-  padding: 0.35rem 1.4rem 0.4rem;
-
-  cursor: pointer;
-
-  font-weight: 500;
-
-  font-size: 0.85rem;
-
-  transition: transform 0.15s ease, background 0.15s ease;
+  backdrop-filter: blur(3px);
 
 }
 
 
 
-button.lang-toggle:hover,
+.back-btn {
 
-button.back-btn:hover {
-
-  background: rgba(226, 179, 56, 0.14);
-
-  transform: translateY(-1px);
+  margin-right: 0.5rem;
 
 }
 
 
 
-/* ========== Hero (home) ========== */
+/* ========== HERO (index.html) ========== */
 
 .hero {
 
@@ -186,7 +174,23 @@ button.back-btn:hover {
 
   justify-content: center;
 
-  padding: 6.5rem 1.5rem 2.5rem;
+  padding: 0 1.5rem;
+
+  position: relative;
+
+}
+
+
+
+.hero-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.35) 70%, rgba(0, 0, 0, 0.9) 100%);
+
+  pointer-events: none;
 
 }
 
@@ -194,11 +198,13 @@ button.back-btn:hover {
 
 .hero-content {
 
+  position: relative;
+
+  z-index: 10;
+
+  max-width: 45rem;
+
   text-align: center;
-
-  max-width: 750px;
-
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1), rgba(0,0,0,0));
 
 }
 
@@ -206,13 +212,13 @@ button.back-btn:hover {
 
 .hero-title {
 
-  font-size: clamp(2.4rem, 4vw, 3.1rem);
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
 
-  font-weight: 700;
+  font-weight: 800;
 
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
 
-  text-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -220,73 +226,75 @@ button.back-btn:hover {
 
 .hero-subtitle {
 
-  max-width: 670px;
+  font-size: 0.98rem;
 
-  margin: 0 auto 1.6rem;
+  line-height: 1.6;
 
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.96);
+
+  max-width: 36rem;
+
+  margin: 0 auto 1.6rem auto;
+
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.55);
+
+}
+
+
+
+.btn-gold {
+
+  padding: 0.6rem 1.8rem 0.65rem;
 
   font-size: 1rem;
 
-  text-shadow: 0 14px 30px rgba(0,0,0,0.35);
+}
+
+
+
+/* ========== FOOTER (كل الصفحات) ========== */
+
+.page-footer {
+
+  text-align: center;
+
+  font-size: 0.7rem;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  padding: 1.5rem 0 1.5rem;
 
 }
 
 
 
-.primary-btn {
+/* =========================================================
 
-  display: inline-block;
+   ARCHIVE PAGE
 
-  background: var(--nhw-gold);
+   body class="archive-page"
 
-  color: #000;
+   ========================================================= */
 
-  border: none;
+body.archive-page {
 
-  border-radius: 999px;
-
-  padding: 0.65rem 1.6rem;
-
-  font-weight: 600;
-
-  font-size: 1rem;
-
-  cursor: pointer;
-
-  box-shadow: 0 10px 28px rgba(226, 179, 56, 0.35);
-
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
-
-}
-
-
-
-.primary-btn:hover {
-
-  transform: translateY(-1px);
-
-  box-shadow: 0 13px 32px rgba(226, 179, 56, 0.45);
-
-}
-
-
-
-/* ========== Archive page ========== */
-
-.archive-page {
+  background: url("images/archive-bg.jpg") center center / cover fixed no-repeat;
 
   min-height: 100vh;
 
-  background-image: url("images/archive-bg.jpg");
+}
 
-  background-size: cover;
 
-  background-position: center;
 
-  background-repeat: no-repeat;
+.archive-shell {
 
-  padding: 5.4rem 1.5rem 2.8rem;
+  min-height: 100vh;
+
+  padding: 5.5rem 1.5rem 2.5rem;
+
+  display: flex;
+
+  justify-content: center;
 
 }
 
@@ -294,117 +302,115 @@ button.back-btn:hover {
 
 .archive-inner {
 
-  max-width: var(--max-width);
+  width: min(1050px, 100%);
 
-  margin: 0 auto;
+  background: rgba(5, 5, 5, 0.38);
+
+  border: 1px solid rgba(240, 214, 94, 0.25);
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(4px);
+
+  padding: 2.4rem 2.1rem 2.1rem;
+
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
 
 }
 
 
 
-.section-title {
+.archive-title {
 
   text-align: center;
 
   font-size: 2.1rem;
 
-  margin-bottom: 0.4rem;
-
-  text-shadow: 0 10px 26px rgba(0,0,0,0.45);
+  margin-bottom: 0.45rem;
 
 }
 
 
 
-.section-subtitle {
+.archive-subtitle {
 
   text-align: center;
 
   margin-bottom: 1.8rem;
 
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.7);
 
 }
 
 
 
-.archive-group {
+.archive-section {
 
-  background: rgba(0,0,0,0.65);
+  margin-bottom: 1.6rem;
 
-  border: 1px solid rgba(226, 179, 56, 0.3);
+  border: 1px solid rgba(241, 196, 83, 0.28);
 
-  border-radius: 1.4rem;
+  border-radius: 16px;
 
-  margin-bottom: 1.35rem;
+  padding: 1.3rem 1rem 0.9rem;
 
-  padding: 1.1rem 1.05rem 0.85rem;
-
-  backdrop-filter: blur(8px);
-
-  box-shadow: 0 16px 45px rgba(0,0,0,0.3);
+  background: radial-gradient(circle at top, rgba(0, 0, 0, 0.09), rgba(6, 6, 6, 0));
 
 }
 
 
 
-.archive-group h2 {
+.archive-section h2 {
 
-  margin: 0 0 0.15rem;
+  font-size: 1.05rem;
 
-  font-size: 1.1rem;
-
-}
-
-
-
-.archive-group p {
-
-  margin: 0 0 0.9rem;
-
-  color: rgba(255,255,255,0.6);
-
-  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
 
 }
 
 
 
-.archive-item {
+.archive-section p {
+
+  font-size: 0.75rem;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  margin-bottom: 0.8rem;
+
+}
+
+
+
+.resource-row {
 
   display: flex;
 
+  justify-content: space-between;
+
   align-items: center;
 
-  justify-content: space-between;
+  background: rgba(4, 4, 4, 0.35);
+
+  border: 1px solid rgba(241, 196, 83, 0.12);
+
+  border-radius: 999px;
+
+  padding: 0.45rem 0.5rem 0.45rem 0.95rem;
+
+  margin-bottom: 0.55rem;
 
   gap: 0.75rem;
 
-  padding: 0.55rem 0;
-
-  border-bottom: 1px solid rgba(255,255,255,0.045);
-
 }
 
 
 
-.archive-item:last-child {
+.resource-name {
 
-  border-bottom: none;
+  font-size: 0.78rem;
 
-  padding-bottom: 0.35rem;
-
-}
-
-
-
-.archive-item span {
-
-  font-family: ui-monospace, SFMono-Regular, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
-  font-size: 0.85rem;
-
-  word-break: break-all;
+  word-break: break-word;
 
 }
 
@@ -412,53 +418,49 @@ button.back-btn:hover {
 
 .download-btn {
 
-  background: var(--nhw-gold);
+  font-size: 0.7rem;
 
-  color: #000;             /* <-- علشان يظهر الكلام */
+  background: #e4b127;
 
-  border: none;
+  color: #101010;
+
+  padding: 0.45rem 1.3rem;
 
   border-radius: 999px;
 
-  padding: 0.3rem 0.9rem 0.38rem;
-
-  font-size: 0.75rem;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
   white-space: nowrap;
 
-  transition: background 0.12s ease;
-
 }
 
 
 
-.download-btn:hover {
+/* =========================================================
 
-  background: var(--nhw-gold-dark);
+   GALLERY PAGE
 
-}
+   body class="gallery-page"
 
+   ========================================================= */
 
+body.gallery-page {
 
-/* ========== Gallery page ========== */
-
-.gallery-page {
+  background: url("images/gallery-bg.jpg") center center / cover fixed no-repeat;
 
   min-height: 100vh;
 
-  background-image: url("images/gallery-bg.jpg");
+}
 
-  background-size: cover;
 
-  background-position: center;
 
-  background-repeat: no-repeat;
+.gallery-shell {
 
-  padding: 5.4rem 1.5rem 3.1rem;
+  min-height: 100vh;
+
+  padding: 5.5rem 1.5rem 2.5rem;
+
+  display: flex;
+
+  justify-content: center;
 
 }
 
@@ -466,9 +468,19 @@ button.back-btn:hover {
 
 .gallery-inner {
 
-  max-width: var(--max-width);
+  width: min(1150px, 100%);
 
-  margin: 0 auto;
+  background: rgba(5, 5, 5, 0.38);
+
+  border: 1px solid rgba(240, 214, 94, 0.25);
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(4px);
+
+  padding: 2.3rem 2.1rem 2rem;
+
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
 
 }
 
@@ -482,8 +494,6 @@ button.back-btn:hover {
 
   margin-bottom: 0.35rem;
 
-  text-shadow: 0 10px 28px rgba(0,0,0,0.3);
-
 }
 
 
@@ -494,7 +504,7 @@ button.back-btn:hover {
 
   margin-bottom: 1.6rem;
 
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
 
 }
 
@@ -504,9 +514,9 @@ button.back-btn:hover {
 
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
-  gap: 1.05rem;
+  gap: 1.4rem;
 
 }
 
@@ -514,17 +524,19 @@ button.back-btn:hover {
 
 .gallery-card {
 
-  background: rgba(0,0,0,0.62);
+  background: rgba(0, 0, 0, 0.38);
 
-  border: 1px solid rgba(226, 179, 56, 0.3);
+  border: 1px solid rgba(241, 196, 83, 0.2);
 
-  border-radius: 1.1rem;
+  border-radius: 18px;
 
-  padding: 0.6rem;
+  overflow: hidden;
 
-  backdrop-filter: blur(6px);
+  min-height: 180px;
 
-  box-shadow: 0 16px 50px rgba(0,0,0,0.33);
+  display: flex;
+
+  flex-direction: column;
 
 }
 
@@ -534,75 +546,87 @@ button.back-btn:hover {
 
   width: 100%;
 
-  height: 140px;
+  height: 130px;
 
   object-fit: cover;
 
-  border-radius: 0.8rem;
+}
 
-  display: block;
 
-  margin-bottom: 0.45rem;
 
-  background: rgba(0,0,0,0.1);
+.gallery-card .caption {
+
+  padding: 0.7rem 0.9rem 1rem;
+
+  font-size: 0.75rem;
 
 }
 
 
 
-.gallery-card h3 {
+/* =========================================================
 
-  font-size: 0.85rem;
+   MAKE TEXT MORE READABLE ON COLORED BACKGROUNDS
 
-  margin-bottom: 0.7rem;
+   (هذا هو الجزء اللي اتفقنا عليه)
 
-}
+   ========================================================= */
 
+.archive-page .archive-inner,
 
+.gallery-page .gallery-inner {
 
-.gallery-card a {
+  background: rgba(0, 0, 0, 0.45);
 
-  display: inline-block;
+  backdrop-filter: blur(3px);
 
-  font-size: 0.7rem;
-
-  color: rgba(255,255,255,0.7);
-
-}
-
-
-
-/* ========== Footer ========== */
-
-footer {
-
-  text-align: center;
-
-  padding: 1.4rem 1rem 1.6rem;
-
-  font-size: 0.72rem;
-
-  color: rgba(255,255,255,0.5);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.25);
 
 }
 
 
 
-/* ========== Responsive ========== */
+.archive-page h1,
 
-@media (max-width: 900px) {
+.archive-page h2,
 
-  .hero {
+.archive-page p,
 
-    background-position: center top;
+.gallery-page h1,
+
+.gallery-page h2,
+
+.gallery-page p {
+
+  color: rgba(255, 255, 255, 0.95);
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+
+}
+
+
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 992px) {
+
+  .hero-title {
+
+    font-size: clamp(2.2rem, 7vw, 3.2rem);
 
   }
 
-  .archive-item {
+  .archive-inner,
 
-    flex-direction: column;
+  .gallery-inner {
 
-    align-items: flex-start;
+    padding: 1.8rem 1rem 1.6rem;
+
+  }
+
+  .resource-row {
+
+    flex-wrap: wrap;
 
   }
 
@@ -614,9 +638,11 @@ footer {
 
   .hero {
 
-    background-image: url("images/house-vertical.jpg"); /* صورة الموبايل */
+    background-image: url("images/house-vertical.jpg");
 
     background-size: cover;
+
+    background-position: center top;
 
   }
 
@@ -624,41 +650,9 @@ footer {
 
   .topbar {
 
-    gap: 0.6rem;
+    left: 1rem;
 
-  }
-
-
-
-  nav {
-
-    display: none;
-
-  }
-
-
-
-  .archive-page,
-
-  .gallery-page {
-
-    padding-top: 4.8rem;
-
-  }
-
-
-
-  .gallery-grid {
-
-    grid-template-columns: 1fr 1fr;
-
-  }
-
-
-
-  .hero-title {
-
-    font-size: 2.3rem;
+    right: 1rem;
 
   }
 
@@ -666,35 +660,45 @@ footer {
 
   .hero-subtitle {
 
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 
   }
 
-}
+
+
+  .archive-shell,
+
+  .gallery-shell {
+
+    padding-top: 5rem;
+
+  }
 
 
 
-@media (max-width: 480px) {
+  .resource-row {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    border-radius: 14px;
+
+  }
+
+
+
+  .download-btn {
+
+    margin-top: 0.4rem;
+
+  }
+
+
 
   .gallery-grid {
 
     grid-template-columns: 1fr;
-
-  }
-
-
-
-  .archive-group {
-
-    padding: 1rem 0.7rem 0.6rem;
-
-  }
-
-
-
-  .archive-item span {
-
-    font-size: 0.78rem;
 
   }
 
