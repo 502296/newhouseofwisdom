@@ -1,88 +1,116 @@
 <!DOCTYPE html>
 
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
 
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>New House of Wisdom</title>
 
   <style>
 
-    :root {
+    /* إعداد الخلفية */
 
-      --gold: #d4af37;
-
-      --light: #fffaf0;
-
-    }
-
-    * {
-
-      box-sizing: border-box;
+    body {
 
       margin: 0;
 
       padding: 0;
 
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('images/house-horizontal.jpg');
 
-    }
+      background-size: cover;
 
-    body {
+      background-position: center;
 
-      background: #000;
+      background-repeat: no-repeat;
 
-      color: var(--light);
+      background-attachment: fixed;
 
-      overflow-x: hidden;
+      height: 100vh;
 
-    }
-
-
-
-    header {
-
-      position: fixed;
-
-      top: 0;
-
-      width: 100%;
-
-      z-index: 999;
-
-      background: rgba(0, 0, 0, 0.45);
-
-      backdrop-filter: blur(8px);
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      padding: 0.6rem 6vw;
+      font-family: 'Inter', sans-serif;
 
       color: #fff;
 
+      text-align: center;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
     }
 
-    .logo span { color: var(--gold); }
+
+
+    /* للشاشات الصغيرة (الموبايل) */
+
+    @media (max-width: 768px) {
+
+      body {
+
+        background-image: url('images/house-vertical.jpg');
+
+        background-position: center top;
+
+        background-size: cover;
+
+      }
+
+    }
+
+
+
+    /* اسم الموقع في الأعلى */
+
+    header {
+
+      position: absolute;
+
+      top: 20px;
+
+      left: 40px;
+
+      font-size: 20px;
+
+      font-weight: 700;
+
+      color: #fff;
+
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+
+    }
+
+
+
+    /* زر اللغة */
 
     .lang-btn {
 
+      position: absolute;
+
+      top: 20px;
+
+      right: 40px;
+
       background: transparent;
 
-      border: 1px solid var(--gold);
+      border: 2px solid #d4af37;
 
-      color: var(--gold);
+      color: #d4af37;
 
-      border-radius: 50px;
+      font-size: 14px;
 
-      padding: .4rem .9rem;
+      padding: 8px 18px;
+
+      border-radius: 30px;
 
       cursor: pointer;
 
@@ -90,9 +118,11 @@
 
     }
 
+
+
     .lang-btn:hover {
 
-      background: var(--gold);
+      background: #d4af37;
 
       color: #000;
 
@@ -100,123 +130,95 @@
 
 
 
-    .hero {
-
-      position: relative;
-
-      height: 100vh;
-
-      width: 100%;
-
-      background: url("images/house-of-wisdom.jpg") center center no-repeat;
-
-      background-size: cover;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      text-align: center;
-
-      color: var(--light);
-
-    }
-
-    .overlay {
-
-      position: absolute;
-
-      inset: 0;
-
-      background: rgba(0, 0, 0, 0.3);
-
-    }
-
-    .hero-content {
-
-      position: relative;
-
-      z-index: 2;
-
-      max-width: 700px;
-
-    }
+    /* النص الرئيسي */
 
     h1 {
 
-      font-size: 2.8rem;
+      font-size: 3em;
 
-      color: var(--gold);
+      font-weight: 800;
 
-      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+      color: #d4af37;
 
-      margin-bottom: 0.8rem;
+      margin: 0 20px;
+
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 
     }
+
+
 
     p {
 
-      font-size: 1.1rem;
+      max-width: 600px;
+
+      font-size: 1.1em;
 
       line-height: 1.6;
 
-      color: var(--light);
+      color: #e8e8e8;
 
-      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      margin: 20px auto;
 
-      margin-bottom: 1.5rem;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 
     }
 
+
+
+    /* الزر الرئيسي */
+
     .btn {
 
-      background: var(--gold);
+      background-color: #d4af37;
 
       color: #000;
 
-      padding: 0.6rem 1.5rem;
-
-      border-radius: 50px;
-
-      text-decoration: none;
-
       font-weight: 600;
+
+      border: none;
+
+      padding: 14px 28px;
+
+      border-radius: 40px;
+
+      cursor: pointer;
+
+      font-size: 1em;
 
       transition: 0.3s;
 
     }
 
+
+
     .btn:hover {
 
-      background: #f8e08e;
+      background-color: #b9962f;
+
+      transform: scale(1.05);
 
     }
 
 
+
+    /* الفوتر */
 
     footer {
 
-      background: #111;
+      position: absolute;
 
-      color: #aaa;
+      bottom: 15px;
+
+      width: 100%;
 
       text-align: center;
 
-      padding: 1rem 0;
+      color: #aaa;
 
-      font-size: 0.9rem;
+      font-size: 0.9em;
 
-    }
-
-
-
-    @media (max-width: 700px) {
-
-      h1 { font-size: 2rem; }
-
-      p { font-size: 1rem; }
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 
     }
 
@@ -228,99 +230,31 @@
 
 
 
-<header>
+  <header>New House of Wisdom</header>
 
-  <div class="logo" data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">
-
-    <span>New</span> House of Wisdom
-
-  </div>
-
-  <button class="lang-btn" id="langToggle">عربي</button>
-
-</header>
+  <button class="lang-btn">عربي</button>
 
 
 
-<section class="hero">
+  <main>
 
-  <div class="overlay"></div>
+    <h1>New House of Wisdom</h1>
 
-  <div class="hero-content">
+    <p>A digital initiative to revive Baghdad’s Golden Age knowledge:
 
-    <h1 data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">New House of Wisdom</h1>
+      translation, manuscripts, and the Mustansiriya heritage on the Tigris.</p>
 
-    <p data-en="A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris."
+    <button class="btn">Enter the archive</button>
 
-       data-ar="منصة رقمية لإحياء تراث بغداد العلمي في العصر العباسي: الترجمة، المخطوطات، والمدرسة المستنصرية على ضفاف دجلة.">
-
-       A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris.
-
-    </p>
-
-    <a href="#archive" class="btn" data-en="Enter the archive" data-ar="ادخل الأرشيف">Enter the archive</a>
-
-  </div>
-
-</section>
+  </main>
 
 
 
-<footer>
+  <footer>
 
-  <p data-en="New House of Wisdom • Baghdad Digital Heritage • 2025"
+    © New House of Wisdom | Baghdad Digital Heritage 2025
 
-     data-ar="بيت الحكمة الجديد • التراث الرقمي لبغداد • 2025">
-
-     New House of Wisdom • Baghdad Digital Heritage • 2025
-
-  </p>
-
-</footer>
-
-
-
-<script>
-
-  const btn = document.getElementById('langToggle');
-
-  let currentLang = 'en';
-
-
-
-  function setLang(lang) {
-
-    const all = document.querySelectorAll('[data-en]');
-
-    all.forEach(el => {
-
-      el.textContent = el.getAttribute(lang === 'ar' ? 'data-ar' : 'data-en');
-
-    });
-
-    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-
-    document.documentElement.lang = (lang === 'ar') ? 'ar' : 'en';
-
-    btn.textContent = (lang === 'ar') ? 'English' : 'عربي';
-
-    currentLang = lang;
-
-  }
-
-
-
-  btn.addEventListener('click', () => {
-
-    setLang(currentLang === 'en' ? 'ar' : 'en');
-
-  });
-
-
-
-  setLang('en');
-
-</script>
+  </footer>
 
 
 
