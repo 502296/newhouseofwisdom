@@ -16,19 +16,19 @@
 
       --gold: #d4af37;
 
-      --light: #fffaf0;
+      --bg: #0f0b09;
 
-      --bg: #140f0c; /* أغمق شوي من الصورة */
+      --ink: #fffaf0;
 
     }
 
     * {
 
-      box-sizing: border-box;
-
       margin: 0;
 
       padding: 0;
+
+      box-sizing: border-box;
 
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
@@ -36,17 +36,15 @@
 
     body {
 
-      background: #000;
+      background: var(--bg);
 
-      color: var(--light);
-
-      overflow-x: hidden;
+      color: #fff;
 
     }
 
 
 
-    /* الهيدر */
+    /* header */
 
     header {
 
@@ -54,13 +52,13 @@
 
       top: 0;
 
+      left: 0;
+
       width: 100%;
 
-      z-index: 999;
+      z-index: 10;
 
-      background: rgba(0, 0, 0, 0.35);
-
-      backdrop-filter: blur(8px);
+      padding: .7rem 5vw;
 
       display: flex;
 
@@ -68,9 +66,9 @@
 
       align-items: center;
 
-      padding: 0.7rem 5vw;
+      background: rgba(0,0,0,0.4);
 
-      color: #fff;
+      backdrop-filter: blur(10px);
 
     }
 
@@ -78,9 +76,7 @@
 
       font-weight: 700;
 
-      font-size: 1.25rem; /* كبرناه */
-
-      letter-spacing: 0.03em;
+      font-size: 1.25rem;
 
     }
 
@@ -88,53 +84,29 @@
 
     .lang-btn {
 
-      background: transparent;
-
       border: 1px solid var(--gold);
+
+      background: transparent;
 
       color: var(--gold);
 
-      border-radius: 50px;
+      border-radius: 999px;
 
-      padding: .45rem 1rem;
+      padding: .35rem 1rem;
 
       cursor: pointer;
-
-      transition: 0.3s;
 
       font-weight: 500;
 
     }
 
-    .lang-btn:hover {
-
-      background: var(--gold);
-
-      color: #000;
-
-    }
 
 
-
-    /* البطل */
+    /* hero layout: عمودين: يسار فراغ مزخرف بسيط، وسط الصورة بالنص */
 
     .hero {
 
-      position: relative;
-
-      height: 100vh;
-
-      width: 100%;
-
-      background-color: var(--bg);
-
-      background-image: url("images/house-of-wisdom.jpg");
-
-      background-repeat: no-repeat;
-
-      background-position: center top;
-
-      background-size: contain;    /* عشان ما ينقص الطير والانعكاس */
+      min-height: 100vh;
 
       display: flex;
 
@@ -142,125 +114,175 @@
 
       justify-content: center;
 
-      text-align: center;
+      padding-top: 3.5rem; /* للهيدر */
 
-      color: var(--light);
-
-      padding-top: 3.5rem; /* مساحة للهيدر */
+      background: radial-gradient(circle at top, #20150f 0%, #0f0b09 60%, #0a0807 100%);
 
     }
 
 
 
-    /* قللنا التعتيم وخليناه أخف */
+    .hero-inner {
 
-    .overlay {
+      width: min(1180px, 100%);
 
-      position: absolute;
+      display: flex;
 
-      inset: 0;
+      gap: 1.5rem;
 
-      background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.35));
+      padding: 0 1rem;
+
+      align-items: center;
+
+      justify-content: center;
 
     }
 
 
 
-    .hero-content {
+    /* العمود اللي فيه الصورة */
+
+    .hero-visual {
 
       position: relative;
 
-      z-index: 2;
+      flex: 0 0 auto;
 
-      max-width: 700px;
+      height: calc(100vh - 4rem);
 
-      padding: 2rem 1.5rem;
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+    .hero-visual img {
+
+      height: 100%;
+
+      width: auto;
+
+      display: block;
+
+      border-radius: 0;
+
+      box-shadow: 0 20px 40px rgba(0,0,0,.35);
+
+    }
+
+
+
+    /* النص فوق الصورة */
+
+    .hero-text {
+
+      position: absolute;
+
+      top: 50%;
+
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      text-align: center;
+
+      max-width: 360px;
 
       text-shadow: 0 3px 12px rgba(0,0,0,.6);
 
     }
 
+    .hero-text h1 {
 
-
-    h1 {
-
-      font-size: 2.9rem;
+      font-size: 2.7rem;
 
       color: var(--gold);
 
-      margin-bottom: 0.8rem;
+      margin-bottom: .7rem;
 
     }
 
+    .hero-text p {
 
+      font-size: 1rem;
 
-    p {
+      line-height: 1.5;
 
-      font-size: 1.05rem;
+      margin-bottom: 1.1rem;
 
-      line-height: 1.6;
-
-      color: var(--light);
-
-      margin-bottom: 1.5rem;
+      color: #fff;
 
     }
 
+    .hero-text a {
 
-
-    .btn {
+      display: inline-block;
 
       background: var(--gold);
 
       color: #000;
 
-      padding: 0.6rem 1.6rem;
+      padding: .55rem 1.4rem;
 
-      border-radius: 50px;
-
-      text-decoration: none;
+      border-radius: 999px;
 
       font-weight: 600;
 
-      transition: 0.3s;
-
-      display: inline-block;
+      text-decoration: none;
 
     }
 
 
 
-    .btn:hover {
+    /* موبايل */
 
-      background: #f8e08e;
+    @media (max-width: 768px) {
 
-    }
+      .hero {
 
+        padding-top: 3.2rem;
 
+      }
 
-    footer {
+      .hero-inner {
 
-      background: #111;
+        padding: 0;
 
-      color: #aaa;
+      }
 
-      text-align: center;
+      .hero-visual {
 
-      padding: 1rem 0;
+        height: auto;
 
-      font-size: 0.9rem;
+        width: 100%;
 
-    }
+      }
 
+      .hero-visual img {
 
+        width: 100%;
 
-    @media (max-width: 700px) {
+        height: auto; /* هنا راح ترجع تشوف الماء والانعكاس كامل */
 
-      h1 { font-size: 2.1rem; }
+        box-shadow: none;
 
-      p { font-size: 1rem; }
+      }
 
-      .logo { font-size: 1.05rem; }
+      .hero-text {
+
+        top: 48%;
+
+        max-width: 82%;
+
+      }
+
+      .hero-text h1 {
+
+        font-size: 2.2rem;
+
+      }
 
     }
 
@@ -288,21 +310,31 @@
 
 <section class="hero">
 
-  <div class="overlay"></div>
+  <div class="hero-inner">
 
-  <div class="hero-content">
+    <div class="hero-visual">
 
-    <h1 data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">New House of Wisdom</h1>
+      <!-- غيّر المسار حسب مجلدك -->
 
-    <p data-en="A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris."
+      <img src="images/house-of-wisdom.jpg" alt="New House of Wisdom" />
 
-       data-ar="منصة رقمية لإحياء تراث بغداد العلمي في العصر العباسي: الترجمة، المخطوطات، والمدرسة المستنصرية على ضفاف دجلة.">
+      <div class="hero-text">
 
-       A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris.
+        <h1 data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">New House of Wisdom</h1>
 
-    </p>
+        <p data-en="A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris."
 
-    <a href="#archive" class="btn" data-en="Enter the archive" data-ar="ادخل الأرشيف">Enter the archive</a>
+           data-ar="منصة رقمية لإحياء تراث بغداد العلمي في العصر العباسي: الترجمة، المخطوطات، والمدرسة المستنصرية على ضفاف دجلة.">
+
+           A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris.
+
+        </p>
+
+        <a href="#archive" data-en="Enter the archive" data-ar="ادخل الأرشيف">Enter the archive</a>
+
+      </div>
+
+    </div>
 
   </div>
 
@@ -310,33 +342,15 @@
 
 
 
-<footer>
-
-  <p data-en="New House of Wisdom • Baghdad Digital Heritage • 2025"
-
-     data-ar="بيت الحكمة الجديد • التراث الرقمي لبغداد • 2025">
-
-     New House of Wisdom • Baghdad Digital Heritage • 2025
-
-  </p>
-
-</footer>
-
-
-
 <script>
 
   const btn = document.getElementById('langToggle');
 
-  let currentLang = 'en';
+  let current = 'en';
 
+  function setLang(lang){
 
-
-  function setLang(lang) {
-
-    const all = document.querySelectorAll('[data-en]');
-
-    all.forEach(el => {
+    document.querySelectorAll('[data-en]').forEach(el=>{
 
       el.textContent = el.getAttribute(lang === 'ar' ? 'data-ar' : 'data-en');
 
@@ -344,23 +358,13 @@
 
     document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
 
-    document.documentElement.lang = (lang === 'ar') ? 'ar' : 'en';
-
     btn.textContent = (lang === 'ar') ? 'English' : 'عربي';
 
-    currentLang = lang;
+    current = lang;
 
   }
 
-
-
-  btn.addEventListener('click', () => {
-
-    setLang(currentLang === 'en' ? 'ar' : 'en');
-
-  });
-
-
+  btn.addEventListener('click', ()=> setLang(current === 'en' ? 'ar' : 'en'));
 
   setLang('en');
 
