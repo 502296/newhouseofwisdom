@@ -2,241 +2,51 @@
 
 <html lang="en">
 
-<head>
+  <head>
 
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>New House of Wisdom</title>
+    <title>New House of Wisdom</title>
 
-  <style>
+    <link rel="icon" href="images/house-vertical.jpg" />
 
-    :root {
+    <style>
 
-      --gold: #d4af37;
+      :root {
 
-      --dark: #0d0b0a;
+        --bg: #050505;
 
-    }
+        --gold: #d6a318;
 
+        --text: #ffffff;
 
+      }
 
-    /* Page setup */
 
-    body {
 
-      margin: 0;
+      * {
 
-      min-height: 100vh;
+        box-sizing: border-box;
 
-      background: url('images/house-horizontal.jpg') no-repeat center center fixed;
+        margin: 0;
 
-      background-size: cover;
+        padding: 0;
 
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
 
-      color: #fff;
 
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: center;
-
-      justify-content: center;
-
-      text-align: center;
-
-      position: relative;
-
-    }
-
-
-
-    /* Subtle overlay for better text readability */
-
-    body::before {
-
-      content: "";
-
-      position: fixed;
-
-      inset: 0;
-
-      background: radial-gradient(circle, rgba(0,0,0,0) 30%, rgba(0,0,0,0.4) 90%);
-
-      pointer-events: none;
-
-      z-index: 0;
-
-    }
-
-
-
-    header {
-
-      position: absolute;
-
-      top: 20px;
-
-      left: 40px;
-
-      font-size: 20px;
-
-      font-weight: 700;
-
-      text-shadow: 0 0 6px rgba(0,0,0,0.85);
-
-      z-index: 2;
-
-    }
-
-
-
-    .lang-btn {
-
-      position: absolute;
-
-      top: 20px;
-
-      right: 40px;
-
-      background: transparent;
-
-      border: 2px solid var(--gold);
-
-      color: var(--gold);
-
-      padding: 8px 18px;
-
-      border-radius: 999px;
-
-      cursor: pointer;
-
-      font-weight: 500;
-
-      z-index: 2;
-
-      transition: 0.2s;
-
-    }
-
-    .lang-btn:hover {
-
-      background: var(--gold);
-
-      color: #000;
-
-    }
-
-
-
-    main {
-
-      z-index: 2;
-
-      max-width: 650px;
-
-      padding: 0 1.5rem;
-
-    }
-
-
-
-    h1 {
-
-      font-size: 3rem;
-
-      margin-bottom: 1rem;
-
-      color: var(--gold);
-
-      text-shadow: 0 0 10px rgba(0,0,0,0.85);
-
-    }
-
-
-
-    p {
-
-      font-size: 1.05rem;
-
-      line-height: 1.6;
-
-      text-shadow: 0 0 6px rgba(0,0,0,0.9);
-
-    }
-
-
-
-    .btn {
-
-      margin-top: 1.4rem;
-
-      background: var(--gold);
-
-      border: none;
-
-      color: #000;
-
-      padding: 14px 30px;
-
-      border-radius: 999px;
-
-      font-weight: 600;
-
-      cursor: pointer;
-
-      font-size: 1rem;
-
-      transition: 0.2s;
-
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-
-    }
-
-    .btn:hover {
-
-      transform: translateY(-2px);
-
-      background: #c29d2e;
-
-    }
-
-
-
-    footer {
-
-      position: absolute;
-
-      bottom: 12px;
-
-      width: 100%;
-
-      text-align: center;
-
-      font-size: 0.8rem;
-
-      color: rgba(255,255,255,0.75);
-
-      text-shadow: 0 0 4px rgba(0,0,0,0.85);
-
-      z-index: 2;
-
-    }
-
-
-
-    /* Mobile view */
-
-    @media (max-width: 768px) {
 
       body {
 
-        background: url('images/house-vertical.jpg') no-repeat center top fixed;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 
-        background-size: cover;
+          sans-serif;
+
+        background: var(--bg);
+
+        color: var(--text);
 
       }
 
@@ -244,11 +54,37 @@
 
       header {
 
-        left: 16px;
+        position: fixed;
 
-        top: 16px;
+        top: 0;
 
-        font-size: 18px;
+        left: 0;
+
+        width: 100%;
+
+        z-index: 10;
+
+        padding: 16px 3vw;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        background: rgba(0, 0, 0, 0.38);
+
+        backdrop-filter: blur(8px);
+
+      }
+
+
+
+      .brand {
+
+        font-weight: 600;
+
+        letter-spacing: 0.03em;
 
       }
 
@@ -256,17 +92,19 @@
 
       .lang-btn {
 
-        right: 16px;
+        background: transparent;
 
-        top: 14px;
+        border: 2px solid var(--gold);
 
-      }
+        color: var(--gold);
 
+        border-radius: 999px;
 
+        padding: 6px 18px 7px;
 
-      h1 {
+        cursor: pointer;
 
-        font-size: 2.4rem;
+        font-weight: 600;
 
       }
 
@@ -274,7 +112,125 @@
 
       main {
 
-        margin-top: 3rem;
+        min-height: 100vh;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 90px 3vw 40px;
+
+      }
+
+
+
+      .hero {
+
+        width: min(1200px, 100%);
+
+        aspect-ratio: 3 / 1.35; /* نعطيه نسبة عرض ثابتة لسطح المكتب */
+
+        background-image: url("images/house-horizontal.jpg");
+
+        background-size: cover;
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+
+        border-radius: 0;
+
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+      }
+
+
+
+      /* طبقة خفيفة للتباين */
+
+      .hero::after {
+
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,.35) 90%);
+
+      }
+
+
+
+      .hero-content {
+
+        position: relative;
+
+        text-align: center;
+
+        max-width: 540px;
+
+      }
+
+
+
+      h1 {
+
+        font-size: clamp(2.7rem, 4vw, 3.4rem);
+
+        font-weight: 700;
+
+        color: #ffe9aa;
+
+        text-shadow: 0 18px 28px rgba(0, 0, 0, 0.4);
+
+        margin-bottom: 14px;
+
+      }
+
+
+
+      p.subtitle {
+
+        font-size: 0.98rem;
+
+        line-height: 1.5;
+
+        text-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+        margin-bottom: 22px;
+
+      }
+
+
+
+      .primary-btn {
+
+        background: var(--gold);
+
+        color: #111;
+
+        border: none;
+
+        padding: 12px 36px;
+
+        border-radius: 999px;
+
+        font-weight: 600;
+
+        font-size: 1rem;
+
+        cursor: pointer;
+
+        box-shadow: 0 12px 22px rgba(0, 0, 0, 0.3);
 
       }
 
@@ -282,46 +238,214 @@
 
       footer {
 
-        position: static;
+        text-align: center;
 
-        margin-top: 2rem;
+        padding: 16px;
+
+        font-size: 0.75rem;
+
+        color: #999;
 
       }
 
-    }
-
-  </style>
-
-</head>
-
-<body>
-
-  <header>New House of Wisdom</header>
-
-  <button class="lang-btn">عربي</button>
 
 
+      /* موبايل */
 
-  <main>
+      @media (max-width: 768px) {
 
-    <h1>New House of Wisdom</h1>
+        .hero {
 
-    <p>
+          width: 100%;
 
-      A digital initiative to revive Baghdad’s Golden Age knowledge:
+          /* في الموبايل نرجع للصورة العمودية */
 
-      translation, manuscripts, and the Mustansiriya heritage on the Tigris.
+          background-image: url("images/house-vertical.jpg");
 
-    </p>
+          aspect-ratio: auto;
 
-    <button class="btn">Enter the archive</button>
+          min-height: calc(100vh - 80px);
 
-  </main>
+        }
+
+        .hero-content {
+
+          padding: 0 18px;
+
+        }
+
+        h1 {
+
+          font-size: 2.35rem;
+
+        }
+
+        p.subtitle {
+
+          font-size: 0.9rem;
+
+        }
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <header>
+
+      <div class="brand" id="site-title">New House of Wisdom</div>
+
+      <button class="lang-btn" id="lang-toggle">عربي</button>
+
+    </header>
 
 
 
-  <footer>© New House of Wisdom | Baghdad Digital Heritage 2025</footer>
+    <main>
 
-</body>
+      <section class="hero" id="hero">
+
+        <div class="hero-content">
+
+          <h1 id="hero-title">New House of Wisdom</h1>
+
+          <p class="subtitle" id="hero-subtitle">
+
+            A digital initiative to revive Baghdad’s Golden Age knowledge:
+
+            translation, manuscripts, and the Mustansiriya heritage on the
+
+            Tigris.
+
+          </p>
+
+          <button class="primary-btn" id="hero-button">Enter the archive</button>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+
+    <footer id="footer-text">
+
+      © New House of Wisdom | Baghdad Digital Heritage 2025
+
+    </footer>
+
+
+
+    <script>
+
+      // لغة البداية
+
+      let currentLang = "en";
+
+
+
+      const langToggle = document.getElementById("lang-toggle");
+
+      const heroTitle = document.getElementById("hero-title");
+
+      const heroSubtitle = document.getElementById("hero-subtitle");
+
+      const heroButton = document.getElementById("hero-button");
+
+      const footerText = document.getElementById("footer-text");
+
+      const siteTitle = document.getElementById("site-title");
+
+      const hero = document.getElementById("hero");
+
+
+
+      langToggle.addEventListener("click", () => {
+
+        if (currentLang === "en") {
+
+          // إلى العربية
+
+          currentLang = "ar";
+
+          document.documentElement.lang = "ar";
+
+          document.body.dir = "rtl";
+
+          siteTitle.textContent = "بيت الحكمة الجديد";
+
+          heroTitle.textContent = "بيت الحكمة الجديد";
+
+          heroSubtitle.textContent =
+
+            "مبادرة رقمية لإحياء تراث بغداد العلمي في العصر العباسي: الترجمة، المخطوطات، والمدرسة المستنصرية على دجلة.";
+
+          heroButton.textContent = "ادخل الأرشيف";
+
+          langToggle.textContent = "English";
+
+          footerText.textContent =
+
+            "© بيت الحكمة الجديد | التراث الرقمي لبغداد 2025";
+
+          // في العربية – احتفظ بنفس الصورة الأفقية على الديسكتوب
+
+          if (window.innerWidth <= 768) {
+
+            hero.style.backgroundImage = "url('images/house-vertical.jpg')";
+
+          } else {
+
+            hero.style.backgroundImage = "url('images/house-horizontal.jpg')";
+
+          }
+
+        } else {
+
+          // إلى الانجليزية
+
+          currentLang = "en";
+
+          document.documentElement.lang = "en";
+
+          document.body.dir = "ltr";
+
+          siteTitle.textContent = "New House of Wisdom";
+
+          heroTitle.textContent = "New House of Wisdom";
+
+          heroSubtitle.textContent =
+
+            "A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris.";
+
+          heroButton.textContent = "Enter the archive";
+
+          langToggle.textContent = "عربي";
+
+          footerText.textContent =
+
+            "© New House of Wisdom | Baghdad Digital Heritage 2025";
+
+          if (window.innerWidth <= 768) {
+
+            hero.style.backgroundImage = "url('images/house-vertical.jpg')";
+
+          } else {
+
+            hero.style.backgroundImage = "url('images/house-horizontal.jpg')";
+
+          }
+
+        }
+
+      });
+
+    </script>
+
+  </body>
 
 </html>
