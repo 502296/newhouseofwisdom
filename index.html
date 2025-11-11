@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
 
@@ -8,17 +8,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>New House of Wisdom | بيت الحكمة الجديد</title>
+  <title>New House of Wisdom</title>
 
   <style>
 
     :root {
 
-      --bg: #0f1a2a;
-
       --gold: #d4af37;
 
-      --light: #f8f7f3;
+      --light: #fffaf0;
 
     }
 
@@ -36,13 +34,15 @@
 
     body {
 
-      background: #fff;
+      background: #000;
 
-      color: #222;
+      color: var(--light);
+
+      overflow-x: hidden;
 
     }
 
-    /* navbar */
+
 
     header {
 
@@ -54,9 +54,9 @@
 
       z-index: 999;
 
-      background: rgba(15, 26, 42, 0.45);
+      background: rgba(0, 0, 0, 0.45);
 
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(8px);
 
       display: flex;
 
@@ -64,209 +64,159 @@
 
       align-items: center;
 
-      padding: 0.5rem 6vw;
+      padding: 0.6rem 6vw;
 
       color: #fff;
 
     }
 
-    .logo {
+    .logo span { color: var(--gold); }
 
-      font-weight: 700;
+    .lang-btn {
 
-      letter-spacing: 0.05rem;
+      background: transparent;
 
-    }
-
-    .logo span {
+      border: 1px solid var(--gold);
 
       color: var(--gold);
 
-    }
+      border-radius: 50px;
 
-    nav a {
+      padding: .4rem .9rem;
 
-      color: #fff;
+      cursor: pointer;
 
-      text-decoration: none;
-
-      margin-left: 1.2rem;
-
-      font-size: 0.9rem;
+      transition: 0.3s;
 
     }
 
-    nav a:hover { color: var(--gold); }
+    .lang-btn:hover {
+
+      background: var(--gold);
+
+      color: #000;
+
+    }
 
 
-
-    /* hero */
 
     .hero {
 
-      margin-top: 55px;
+      position: relative;
 
-      min-height: 90vh;
+      height: 100vh;
 
-      background: linear-gradient(120deg, rgba(0,0,0,.35), rgba(0,0,0,.55)),
+      width: 100%;
 
-        url("images/house-of-wisdom.jpg") center center/cover no-repeat;
+      background: url("images/house-of-wisdom.jpg") center center no-repeat;
+
+      background-size: cover;
 
       display: flex;
 
       align-items: center;
 
-      justify-content: flex-end;
+      justify-content: center;
 
-      padding: 3rem 6vw;
+      text-align: center;
 
-    }
-
-    .hero-box {
-
-      background: rgba(15, 26, 42, 0.45);
-
-      border: 1px solid rgba(212,175,55,0.3);
-
-      border-radius: 18px;
-
-      padding: 1.8rem 1.6rem;
-
-      max-width: 420px;
-
-      color: #fff;
-
-      backdrop-filter: blur(4px);
+      color: var(--light);
 
     }
 
-    .hero-box h1 {
+    .overlay {
 
-      font-size: 2.15rem;
+      position: absolute;
 
-      line-height: 1.1;
+      inset: 0;
 
-      margin-bottom: 0.6rem;
+      background: rgba(0, 0, 0, 0.3);
 
     }
 
-    .hero-box p {
+    .hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 700px;
+
+    }
+
+    h1 {
+
+      font-size: 2.8rem;
+
+      color: var(--gold);
+
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+
+      margin-bottom: 0.8rem;
+
+    }
+
+    p {
+
+      font-size: 1.1rem;
 
       line-height: 1.6;
 
-      font-size: 0.95rem;
+      color: var(--light);
 
-      margin-bottom: 1.2rem;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+
+      margin-bottom: 1.5rem;
 
     }
 
     .btn {
 
-      display: inline-block;
-
       background: var(--gold);
 
-      color: #0f1a2a;
+      color: #000;
+
+      padding: 0.6rem 1.5rem;
+
+      border-radius: 50px;
 
       text-decoration: none;
 
-      padding: 0.55rem 1.2rem;
-
-      border-radius: 999px;
-
       font-weight: 600;
 
-      transition: .3s;
+      transition: 0.3s;
 
     }
 
-    .btn:hover { background: #f7d870; }
+    .btn:hover {
 
-
-
-    /* sections */
-
-    .section {
-
-      padding: 3.5rem 6vw 3.5rem;
+      background: #f8e08e;
 
     }
-
-    .section h2 {
-
-      color: #0f1a2a;
-
-      margin-bottom: 1rem;
-
-    }
-
-    .cards {
-
-      display: grid;
-
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-
-      gap: 1.2rem;
-
-      margin-top: 1.2rem;
-
-    }
-
-    .card {
-
-      background: #fff;
-
-      border-radius: 14px;
-
-      padding: 1rem 1rem 1.2rem;
-
-      border: 1px solid rgba(212,175,55,0.12);
-
-      box-shadow: 0 12px 30px rgba(0,0,0,0.04);
-
-    }
-
-    .card h3 { margin-bottom: 0.4rem; color: #0f1a2a; }
 
 
 
     footer {
 
+      background: #111;
+
+      color: #aaa;
+
       text-align: center;
 
-      padding: 1.6rem 1rem 2rem;
+      padding: 1rem 0;
 
-      background: #0b1220;
-
-      color: #fff;
-
-      font-size: 0.8rem;
-
-      margin-top: 2.5rem;
+      font-size: 0.9rem;
 
     }
 
-    footer span { color: var(--gold); }
 
 
+    @media (max-width: 700px) {
 
-    @media (max-width: 780px) {
+      h1 { font-size: 2rem; }
 
-      nav { display: none; }
-
-      .hero {
-
-        justify-content: center;
-
-        text-align: center;
-
-      }
-
-      .hero-box {
-
-        max-width: 100%;
-
-      }
+      p { font-size: 1rem; }
 
     }
 
@@ -280,17 +230,13 @@
 
 <header>
 
-  <div class="logo">New House of <span>Wisdom</span></div>
+  <div class="logo" data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">
 
-  <nav>
+    <span>New</span> House of Wisdom
 
-    <a href="#about">عن المنصة</a>
+  </div>
 
-    <a href="#archive">الأرشيف</a>
-
-    <a href="#contact">تواصل</a>
-
-  </nav>
+  <button class="lang-btn" id="langToggle">عربي</button>
 
 </header>
 
@@ -298,99 +244,23 @@
 
 <section class="hero">
 
-  <div class="hero-box">
+  <div class="overlay"></div>
 
-    <h1>بيت الحكمة الجديد</h1>
+  <div class="hero-content">
 
-    <p>
+    <h1 data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">New House of Wisdom</h1>
 
-      منصة رقمية لإحياء تراث بغداد العلمي في العصر العباسي:
+    <p data-en="A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris."
 
-      المكتبات، الترجمة، المخطوطات، والمدرسة المستنصرية على ضفاف دجلة.
+       data-ar="منصة رقمية لإحياء تراث بغداد العلمي في العصر العباسي: الترجمة، المخطوطات، والمدرسة المستنصرية على ضفاف دجلة.">
+
+       A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris.
 
     </p>
 
-    <a href="#archive" class="btn">ادخل الأرشيف</a>
+    <a href="#archive" class="btn" data-en="Enter the archive" data-ar="ادخل الأرشيف">Enter the archive</a>
 
   </div>
-
-</section>
-
-
-
-<section class="section" id="about">
-
-  <h2>عن المشروع</h2>
-
-  <p>
-
-    هذا الموقع غير ربحي، هدفه جمع ما أمكن من المواد النصية والبصرية المتعلقة ببيت الحكمة
-
-    وتقديمها بشكل جميل وحديث، مع المحافظة على روح بغداد العباسية.
-
-  </p>
-
-</section>
-
-
-
-<section class="section" id="archive">
-
-  <h2>الأقسام الرئيسة</h2>
-
-  <div class="cards">
-
-    <div class="card">
-
-      <h3>بيت الحكمة</h3>
-
-      <p>تعريف بالمؤسسة العباسية، أبرز الخلفاء، ودور الترجمة.</p>
-
-    </div>
-
-    <div class="card">
-
-      <h3>المستنصرية</h3>
-
-      <p>صور ووثائق للمبنى التاريخي على دجلة، ونماذج للمقررات.</p>
-
-    </div>
-
-    <div class="card">
-
-      <h3>المخطوطات</h3>
-
-      <p>مكان رفع النسخ المصورة لاحقًا مع ذكر المصدر وحقوق النشر.</p>
-
-    </div>
-
-    <div class="card">
-
-      <h3>أعلام بغداد</h3>
-
-      <p>الرازي، حنين بن إسحاق، الجاحظ، وإسهاماتهم.</p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<section class="section" id="contact">
-
-  <h2>إسهامك</h2>
-
-  <p>
-
-    إذا لديك صور أصلية من بغداد أو من المتحف العراقي أو المدرسة المستنصرية،
-
-    يمكن إضافتها هنا مع ذكر اسمك. راسلنا على:
-
-    <b>archive@newhouseofwisdom.com</b>
-
-  </p>
 
 </section>
 
@@ -398,11 +268,59 @@
 
 <footer>
 
-  <p>New House of Wisdom • Baghdad Digital Heritage • 2025</p>
+  <p data-en="New House of Wisdom • Baghdad Digital Heritage • 2025"
 
-  <p><span>Prepared by: Ali Kathem</span></p>
+     data-ar="بيت الحكمة الجديد • التراث الرقمي لبغداد • 2025">
+
+     New House of Wisdom • Baghdad Digital Heritage • 2025
+
+  </p>
 
 </footer>
+
+
+
+<script>
+
+  const btn = document.getElementById('langToggle');
+
+  let currentLang = 'en';
+
+
+
+  function setLang(lang) {
+
+    const all = document.querySelectorAll('[data-en]');
+
+    all.forEach(el => {
+
+      el.textContent = el.getAttribute(lang === 'ar' ? 'data-ar' : 'data-en');
+
+    });
+
+    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+    document.documentElement.lang = (lang === 'ar') ? 'ar' : 'en';
+
+    btn.textContent = (lang === 'ar') ? 'English' : 'عربي';
+
+    currentLang = lang;
+
+  }
+
+
+
+  btn.addEventListener('click', () => {
+
+    setLang(currentLang === 'en' ? 'ar' : 'en');
+
+  });
+
+
+
+  setLang('en');
+
+</script>
 
 
 
