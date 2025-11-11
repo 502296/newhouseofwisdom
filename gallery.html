@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="dark-body">
+<body class="gallery-page">
 
   <header class="topbar">
 
@@ -32,87 +32,59 @@
 
 
 
-  <main class="gallery-wrap" data-lang="en">
+  <main class="gallery-shell">
 
-    <section class="gallery-head">
+    <h1 data-en="Manuscript & Heritage Gallery" data-ar="معرض المخطوطات والتراث">
 
-      <h1 data-en="Manuscript & Heritage Gallery" data-ar="معرض المخطوطات والتراث">
+      Manuscript & Heritage Gallery
 
-        Manuscript & Heritage Gallery
+    </h1>
 
-      </h1>
+    <p class="gallery-lead"
 
-      <p data-en="High-resolution visuals from Abbasid Baghdad, the Mustansiriya, and related collections."
+       data-en="A visual window onto Abbasid Baghdad and the Mustansiriya."
 
-         data-ar="صور عالية الدقة من بغداد العباسية، والمدرسة المستنصرية، والمجموعات المرتبطة.">
+       data-ar="نافذة بصرية على بغداد العباسية والمدرسة المستنصرية.">
 
-        High-resolution visuals from Abbasid Baghdad, the Mustansiriya, and related collections.
+       A visual window onto Abbasid Baghdad and the Mustansiriya.
 
-      </p>
-
-    </section>
+    </p>
 
 
 
-    <section class="gallery-grid">
+    <div class="gallery-grid">
 
-      <!-- كرر هذه البطاقات مع تغيير الصورة -->
+      <!-- كرر هذا البلوك لكل صورة -->
 
-      <article class="gallery-card">
+      <figure class="gallery-card">
 
         <img src="images/Baghdad_Ms_001.jpg" alt="Manuscript 1" />
 
-        <div class="g-meta">
+        <figcaption data-en="Manuscript 1" data-ar="مخطوطة ١">Manuscript 1</figcaption>
 
-          <h3 data-en="Manuscript 1" data-ar="مخطوطة 1">Manuscript 1</h3>
-
-          <a href="images/Baghdad_Ms_001.jpg" download class="download-btn small">Download</a>
-
-        </div>
-
-      </article>
+      </figure>
 
 
 
-      <article class="gallery-card">
+      <figure class="gallery-card">
 
         <img src="images/Baghdad_Ms_002.jpg" alt="Manuscript 2" />
 
-        <div class="g-meta">
+        <figcaption data-en="Manuscript 2" data-ar="مخطوطة ٢">Manuscript 2</figcaption>
 
-          <h3 data-en="Manuscript 2" data-ar="مخطوطة 2">Manuscript 2</h3>
-
-          <a href="images/Baghdad_Ms_002.jpg" download class="download-btn small">Download</a>
-
-        </div>
-
-      </article>
+      </figure>
 
 
 
-      <!-- مثال لصورة عامة للمدرسة -->
+      <!-- تقدر تضيف قد ما تريد بنفس الشكل -->
 
-      <article class="gallery-card">
-
-        <img src="images/mustansiriya.jpg" alt="Mustansiriya" />
-
-        <div class="g-meta">
-
-          <h3 data-en="Mustansiriya view" data-ar="مشهد المستنصرية">Mustansiriya view</h3>
-
-          <a href="images/mustansiriya.jpg" download class="download-btn small">Download</a>
-
-        </div>
-
-      </article>
-
-    </section>
+    </div>
 
   </main>
 
 
 
-  <footer class="site-footer">
+  <footer class="page-footer">
 
     © New House of Wisdom | Baghdad Digital Heritage 2025
 
@@ -120,33 +92,7 @@
 
 
 
-  <script>
-
-    const langBtn = document.getElementById('langToggle');
-
-    const wrap = document.querySelector('.gallery-wrap');
-
-
-
-    langBtn.addEventListener('click', () => {
-
-      const isEn = wrap.getAttribute('data-lang') === 'en';
-
-      wrap.setAttribute('data-lang', isEn ? 'ar' : 'en');
-
-      langBtn.textContent = isEn ? 'EN' : 'عربي';
-
-
-
-      document.querySelectorAll('[data-en]').forEach(el => {
-
-        el.textContent = isEn ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-
-      });
-
-    });
-
-  </script>
+  <script src="lang.js"></script>
 
 </body>
 
