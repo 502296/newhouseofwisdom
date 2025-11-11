@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Articles – New House of Wisdom</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+
+  <body data-lang="en">
+
+    <header class="topbar">
+
+      <div class="brand" data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">New House of Wisdom</div>
+
+      <nav>
+
+        <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+
+        <a href="archive.html" data-en="Archive" data-ar="الأرشيف">Archive</a>
+
+      </nav>
+
+      <button id="langToggle" class="lang-btn">عربي</button>
+
+    </header>
+
+
+
+    <main class="page">
+
+      <h1 class="section-title" data-en="Articles & Research" data-ar="المقالات والبحوث">
+
+        Articles & Research
+
+      </h1>
+
+      <p style="text-align:center;opacity:.7" data-en="Modern papers, commentary, and studies about Abbasid Baghdad." data-ar="بحوث ومقالات ودراسات حديثة عن بغداد العباسية."></p>
+
+
+
+      <div class="archive-grid">
+
+        <div class="archive-card">
+
+          <h3 data-en="The Role of the Mustansiriya" data-ar="دور المدرسة المستنصرية"></h3>
+
+          <p data-en="An academic paper on the curriculum and endowments." data-ar="بحث أكاديمي حول المناهج والأوقاف."></p>
+
+          <a href="files/mustansiriya-paper.pdf" data-en="Download" data-ar="تحميل">Download</a>
+
+        </div>
+
+      </div>
+
+    </main>
+
+
+
+    <footer class="site-footer">© New House of Wisdom | Baghdad Digital Heritage 2025</footer>
+
+
+
+    <script>
+
+      const btn = document.getElementById("langToggle");
+
+      btn.addEventListener("click", () => {
+
+        const isEn = document.body.getAttribute("data-lang") === "en";
+
+        document.body.setAttribute("data-lang", isEn ? "ar" : "en");
+
+        document.body.style.direction = isEn ? "rtl" : "ltr";
+
+        btn.textContent = isEn ? "EN" : "عربي";
+
+        document.querySelectorAll("[data-en]").forEach((el) => {
+
+          el.textContent = isEn ? el.dataset.ar : el.dataset.en;
+
+        });
+
+      });
+
+    </script>
+
+  </body>
+
+</html>
