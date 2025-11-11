@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="ar" dir="rtl">
+<html lang="en">
 
 <head>
 
@@ -8,243 +8,259 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>الأرشيف الرقمي | New House of Wisdom</title>
+  <title>Archive – New House of Wisdom</title>
 
   <link rel="stylesheet" href="style.css" />
 
-  <style>
-
-    /* إضافات بسيطة لهذه الصفحة فقط */
-
-    .archive-grid {
-
-      display: grid;
-
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-
-      gap: 1.2rem;
-
-      margin-top: 1.5rem;
-
-    }
-
-    .archive-item {
-
-      background: #fff;
-
-      border-radius: 14px;
-
-      padding: 1rem 1rem 1.1rem;
-
-      border: 1px solid rgba(212,175,55,0.22);
-
-      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
-
-    }
-
-    .archive-item h3 {
-
-      margin-bottom: 0.4rem;
-
-      color: #0f1a2a;
-
-    }
-
-    .tag {
-
-      display: inline-block;
-
-      background: rgba(212,175,55,0.12);
-
-      color: #0f1a2a;
-
-      font-size: 0.65rem;
-
-      padding: 0.2rem 0.55rem;
-
-      border-radius: 999px;
-
-      margin-bottom: 0.6rem;
-
-    }
-
-    .archive-item p {
-
-      font-size: 0.82rem;
-
-      line-height: 1.5;
-
-    }
-
-  </style>
-
 </head>
 
-<body>
+<body class="archive-page">
 
+  <header class="topbar">
 
+    <a href="index.html" class="brand">New House of Wisdom</a>
 
-<header>
+    <a href="#" id="langToggle" class="lang-btn">عربي</a>
 
-  <div class="logo">New House of <span>Wisdom</span></div>
+  </header>
 
-  <nav>
 
-    <a href="index.html">الرئيسية</a>
 
-    <a href="about.html">عن المشروع</a>
+  <main class="archive-container">
 
-    <a href="archive.html">الأرشيف</a>
+    <h1 id="archTitle">Archive Sections</h1>
 
-    <a href="#contact">تواصل</a>
+    <p id="archSubtitle" class="arch-sub">
 
-  </nav>
+      Curated digital collections: translations, manuscripts, and the Mustansiriya heritage.
 
-</header>
+    </p>
 
 
 
-<!-- Hero -->
+    <section class="cards">
 
-<section class="hero" style="background-image: linear-gradient(120deg, rgba(15,26,42,.85), rgba(15,26,42,.6)), url('images/manuscript.jpg');">
+      <!-- 1) ترجمات -->
 
-  <div class="hero-content">
+      <article class="card">
 
-    <h1>الأرشيف الرقمي العباسي</h1>
+        <h2 id="card1title">Translations & Scientific Texts</h2>
 
-    <p>هنا نجمع ما يمكن الوصول إليه من مخطوطات، أعلام، مدارس، وصور من بغداد العباسية.</p>
+        <p id="card1desc">Texts translated in Baghdad during the Golden Age.</p>
 
-    <a href="#archive" class="btn">عرض المجموعات</a>
+        <ul class="file-list">
 
-  </div>
+          <!-- ملاحظة: ضع الملفات في مجلد files/ وغيّر الاسم -->
 
-</section>
+          <li>
 
+            <span>Euclid_Arabic_Intro.pdf</span>
 
+            <a href="files/Euclid_Arabic_Intro.pdf" download class="download-btn">Download</a>
 
-<section class="section" id="archive">
+          </li>
 
-  <h2>المجموعات المتاحة</h2>
+          <li>
 
-  <p>هذا مجرد نموذج. لاحقًا تقدر تضيف عناصر جديدة من المتحف العراقي، المستنصرية، أو الكتب التي ستصوّرها بنفسك.</p>
+            <span>Galen_Medicine_Notes.pdf</span>
 
+            <a href="files/Galen_Medicine_Notes.pdf" download class="download-btn">Download</a>
 
+          </li>
 
-  <div class="archive-grid" style="margin-top:1.7rem;">
+        </ul>
 
+      </article>
 
 
-    <div class="archive-item">
 
-      <span class="tag">بيت الحكمة</span>
+      <!-- 2) مخطوطات -->
 
-      <h3>ترجمات حنين بن إسحاق</h3>
+      <article class="card">
 
-      <p>مجموعة من الترجمات الطبية والفلسفية من السريانية واليونانية إلى العربية، والتي شكّلت نواة الطب العباسي.</p>
+        <h2 id="card2title">Manuscripts</h2>
 
-      <p style="font-size:0.7rem; margin-top:0.4rem;">المصدر: Baghdad • Digital copy pending</p>
+        <p id="card2desc">High-quality digitized manuscripts, indexed by topic.</p>
 
-    </div>
+        <ul class="file-list">
 
+          <li>
 
+            <span>Baghdad_Ms_001.jpg</span>
 
-    <div class="archive-item">
+            <a href="files/Baghdad_Ms_001.jpg" download class="download-btn">Download</a>
 
-      <span class="tag">المدارس</span>
+          </li>
 
-      <h3>المدرسة المستنصرية</h3>
+          <li>
 
-      <p>صور ووثائق عن المدرسة المستنصرية على نهر دجلة، مع وصف معماري وزخارف إسلامية عباسية.</p>
+            <span>Baghdad_Ms_002.jpg</span>
 
-      <p style="font-size:0.7rem; margin-top:0.4rem;">ستُضاف الصور الأصلية بعد الزيارة الميدانية.</p>
+            <a href="files/Baghdad_Ms_002.jpg" download class="download-btn">Download</a>
 
-    </div>
+          </li>
 
+        </ul>
 
+      </article>
 
-    <div class="archive-item">
 
-      <span class="tag">علماء</span>
 
-      <h3>الرازي</h3>
+      <!-- 3) المستنصرية -->
 
-      <p>أعماله في الطب والكيمياء، مع نبذة عن تأثيره اللاحق في أوروبا.</p>
+      <article class="card">
 
-      <p style="font-size:0.7rem; margin-top:0.4rem;">PDF – نسخة للقراءة فقط.</p>
+        <h2 id="card3title">Mustansiriya Heritage</h2>
 
-    </div>
+        <p id="card3desc">Visual and textual materials about the Mustansiriya School.</p>
 
+        <ul class="file-list">
 
+          <li>
 
-    <div class="archive-item">
+            <span>Mustansiriya_Photos.zip</span>
 
-      <span class="tag">فنون</span>
+            <a href="files/Mustansiriya_Photos.zip" download class="download-btn">Download</a>
 
-      <h3>الزخرفة البغدادية</h3>
+          </li>
 
-      <p>نماذج زخارف عباسية يمكن استخدامها كعناصر تصميم للموقع، مع وصف للألوان والرمزية.</p>
+          <li>
 
-    </div>
+            <span>Mustansiriya_History.pdf</span>
 
+            <a href="files/Mustansiriya_History.pdf" download class="download-btn">Download</a>
 
+          </li>
 
-    <div class="archive-item">
+        </ul>
 
-      <span class="tag">جغرافيا</span>
+      </article>
 
-      <h3>خريطة بغداد العباسية</h3>
+    </section>
 
-      <p>خريطة تقريبية لمواضع القصر، المسجد، وبيت الحكمة، لتوضيح مركز المدينة العلمي.</p>
+  </main>
 
-    </div>
 
 
+  <footer class="footer">
 
-    <div class="archive-item">
+    © New House of Wisdom | Baghdad Digital Heritage 2025
 
-      <span class="tag">مخطوطات</span>
+  </footer>
 
-      <h3>نسخة رقمية – كتاب الطب</h3>
 
-      <p>مكان مخصص لرفع صورة المخطوطة (JPG/PNG) أو ربطها من Google Drive لاحقًا.</p>
 
-    </div>
+  <script>
 
+    // سويت نفس سويتش اللغة هنا
 
+    const langBtn = document.getElementById("langToggle");
 
-  </div>
+    const archTitle = document.getElementById("archTitle");
 
-</section>
+    const archSubtitle = document.getElementById("archSubtitle");
 
+    const c1t = document.getElementById("card1title");
 
+    const c1d = document.getElementById("card1desc");
 
-<section class="section" id="contact">
+    const c2t = document.getElementById("card2title");
 
-  <h2>إضافة مادة جديدة</h2>
+    const c2d = document.getElementById("card2desc");
 
-  <p>
+    const c3t = document.getElementById("card3title");
 
-    إذا كانت لديك مادة أصلية (صور من بغداد، مخطوطات، أو بحث عن أحد العلماء)،
+    const c3d = document.getElementById("card3desc");
 
-    يمكنك إرسالها ليتم أرشفتها هنا مع ذكر اسمك:
 
-    <b>archive@newhouseofwisdom.com</b>
 
-  </p>
+    let current = "en";
 
-</section>
 
 
+    langBtn.addEventListener("click", (e) => {
 
-<footer>
+      e.preventDefault();
 
-  <p>New House of Wisdom • Baghdad Digital Heritage • 2025</p>
+      if (current === "en") {
 
-  <p><span>Prepared by: Ali Kathem</span></p>
+        current = "ar";
 
-</footer>
+        document.documentElement.setAttribute("dir", "rtl");
 
+        document.body.classList.add("rtl");
 
+
+
+        archTitle.textContent = "أقسام الأرشيف";
+
+        archSubtitle.textContent = "مجموعات رقمية مختارة: الترجمة، المخطوطات، والمستصرية.";
+
+
+
+        c1t.textContent = "الترجمات والنصوص العلمية";
+
+        c1d.textContent = "نصوص تُرجمت في بغداد زمن الازدهار العباسي.";
+
+
+
+        c2t.textContent = "المخطوطات";
+
+        c2d.textContent = "مخطوطات رقمية عالية الدقة، مفهرسة حسب الموضوع.";
+
+
+
+        c3t.textContent = "تراث المدرسة المستنصرية";
+
+        c3d.textContent = "مواد بصرية ونصية عن المدرسة المستنصرية على دجلة.";
+
+
+
+        langBtn.textContent = "EN";
+
+      } else {
+
+        current = "en";
+
+        document.documentElement.removeAttribute("dir");
+
+        document.body.classList.remove("rtl");
+
+
+
+        archTitle.textContent = "Archive Sections";
+
+        archSubtitle.textContent =
+
+          "Curated digital collections: translations, manuscripts, and the Mustansiriya heritage.";
+
+
+
+        c1t.textContent = "Translations & Scientific Texts";
+
+        c1d.textContent = "Texts translated in Baghdad during the Golden Age.";
+
+
+
+        c2t.textContent = "Manuscripts";
+
+        c2d.textContent = "High-quality digitized manuscripts, indexed by topic.";
+
+
+
+        c3t.textContent = "Mustansiriya Heritage";
+
+        c3d.textContent = "Visual and textual materials about the Mustansiriya School.";
+
+
+
+        langBtn.textContent = "عربي";
+
+      }
+
+    });
+
+  </script>
 
 </body>
 
