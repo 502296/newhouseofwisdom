@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Manuscript Gallery – New House of Wisdom</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    body {
+
+      background-color: #0b0b0b;
+
+      color: #fff;
+
+      font-family: 'Inter', sans-serif;
+
+      text-align: center;
+
+    }
+
+    h1 {
+
+      color: #d4af37;
+
+      margin-top: 40px;
+
+      text-shadow: 0 0 10px rgba(0,0,0,0.6);
+
+    }
+
+    .gallery {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+      gap: 15px;
+
+      padding: 30px;
+
+      max-width: 1200px;
+
+      margin: auto;
+
+    }
+
+    .gallery img {
+
+      width: 100%;
+
+      height: 230px;
+
+      object-fit: cover;
+
+      border-radius: 8px;
+
+      border: 1px solid #444;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      cursor: pointer;
+
+    }
+
+    .gallery img:hover {
+
+      transform: scale(1.05);
+
+      box-shadow: 0 0 20px rgba(212,175,55,0.4);
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>📜 Abbasid Manuscript Gallery</h1>
+
+  <p>A visual archive of Baghdad’s Golden Age knowledge and heritage</p>
+
+
+
+  <div class="gallery">
+
+    <img src="images/gallery/manuscript1.jpg" alt="Manuscript 1">
+
+    <img src="images/gallery/manuscript2.jpg" alt="Manuscript 2">
+
+    <img src="images/gallery/manuscript3.jpg" alt="Manuscript 3">
+
+    <img src="images/gallery/manuscript4.jpg" alt="Manuscript 4">
+
+    <img src="images/gallery/manuscript5.jpg" alt="Manuscript 5">
+
+  </div>
+
+</body>
+
+</html>
