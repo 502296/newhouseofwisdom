@@ -100,7 +100,7 @@
 
 
 
-    /* الحالة الافتراضية = موبايل / شاشات صغيرة */
+    /* البطل */
 
     .hero {
 
@@ -109,10 +109,6 @@
       height: 100vh;
 
       width: 100%;
-
-      background: #000 url("images/house-of-wisdom.jpg") center top no-repeat;
-
-      background-size: contain;           /* الموبايل مضبوط */
 
       display: flex;
 
@@ -124,9 +120,59 @@
 
       color: var(--light);
 
+      overflow: hidden;
+
     }
 
 
+
+    /* الخلفية المموّهة تملى الشاشة */
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background: url("images/house-of-wisdom.jpg") center center no-repeat;
+
+      background-size: cover;
+
+      filter: blur(18px);
+
+      transform: scale(1.1);
+
+      opacity: 0.65;
+
+      z-index: 0;
+
+    }
+
+
+
+    /* الصورة الأصلية الكاملة */
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background: url("images/house-of-wisdom.jpg") center top no-repeat;
+
+      background-size: contain;      /* أهم سطر: يخلّيها كاملة زي الموبايل */
+
+      z-index: 1;
+
+    }
+
+
+
+    /* طبقة تغميق خفيفة */
 
     .overlay {
 
@@ -134,7 +180,9 @@
 
       inset: 0;
 
-      background: radial-gradient(circle, rgba(0,0,0,0.05), rgba(0,0,0,0.5));
+      background: radial-gradient(circle, rgba(0,0,0,0.05), rgba(0,0,0,0.35));
+
+      z-index: 2;
 
     }
 
@@ -144,11 +192,11 @@
 
       position: relative;
 
-      z-index: 2;
+      z-index: 3;
 
       max-width: 700px;
 
-      padding: 2rem;
+      padding: 2rem 1.5rem;
 
     }
 
@@ -224,6 +272,10 @@
 
       font-size: 0.9rem;
 
+      position: relative;
+
+      z-index: 10;
+
     }
 
 
@@ -233,22 +285,6 @@
       h1 { font-size: 2rem; }
 
       p { font-size: 1rem; }
-
-    }
-
-
-
-    /* هنا التعديل المهم: لما الشاشة تكبر نخليها cover */
-
-    @media (min-width: 900px) {
-
-      .hero {
-
-        background-size: cover;        /* تملأ الشاشة بالكامل */
-
-        background-position: center;   /* وسط */
-
-      }
 
     }
 
