@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Manuscripts – New House of Wisdom</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+
+  <body data-lang="en">
+
+    <header class="topbar">
+
+      <div class="brand" data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">New House of Wisdom</div>
+
+      <nav>
+
+        <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+
+        <a href="archive.html" data-en="Archive" data-ar="الأرشيف">Archive</a>
+
+      </nav>
+
+      <button id="langToggle" class="lang-btn">عربي</button>
+
+    </header>
+
+
+
+    <main class="page">
+
+      <h1 class="section-title" data-en="Manuscripts" data-ar="المخطوطات">Manuscripts</h1>
+
+      <p style="text-align:center;opacity:.7" data-en="Digitized manuscripts from Baghdad’s scholarly heritage." data-ar="مخطوطات رقمية من التراث العلمي لبغداد."></p>
+
+
+
+      <div class="archive-grid">
+
+        <!-- مثال لعناصر -->
+
+        <div class="archive-card">
+
+          <h3 data-en="Medical Treatise (10th c.)" data-ar="رسالة طبية (القرن العاشر)">Medical Treatise (10th c.)</h3>
+
+          <p data-en="Copied in Baghdad, includes notes on pharmacy." data-ar="نُسخت في بغداد، تتضمن ملاحظات في الصيدلة."></p>
+
+          <a href="files/medical-treatise.pdf" data-en="Download" data-ar="تحميل">Download</a>
+
+        </div>
+
+        <div class="archive-card">
+
+          <h3 data-en="Astronomical Tables" data-ar="جداول فلكية">Astronomical Tables</h3>
+
+          <p data-en="Abbasid-era observational records." data-ar="سجلات رصد من العصر العباسي."></p>
+
+          <a href="files/astronomy.pdf" data-en="Download" data-ar="تحميل">Download</a>
+
+        </div>
+
+      </div>
+
+    </main>
+
+
+
+    <footer class="site-footer">© New House of Wisdom | Baghdad Digital Heritage 2025</footer>
+
+
+
+    <script>
+
+      const btn = document.getElementById("langToggle");
+
+      btn.addEventListener("click", () => {
+
+        const isEn = document.body.getAttribute("data-lang") === "en";
+
+        document.body.setAttribute("data-lang", isEn ? "ar" : "en");
+
+        document.body.style.direction = isEn ? "rtl" : "ltr";
+
+        btn.textContent = isEn ? "EN" : "عربي";
+
+        document.querySelectorAll("[data-en]").forEach((el) => {
+
+          el.textContent = isEn ? el.dataset.ar : el.dataset.en;
+
+        });
+
+      });
+
+    </script>
+
+  </body>
+
+</html>
