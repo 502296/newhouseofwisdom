@@ -10,609 +10,107 @@
 
   <title>New House of Wisdom</title>
 
-  <style>
-
-    :root {
-
-      --gold: #e9b623;
-
-      --bg: #050505;
-
-      --text: #ffffff;
-
-      --overlay: rgba(0, 0, 0, 0.55);
-
-      --max-width: 1100px;
-
-    }
-
-
-
-    * {
-
-      box-sizing: border-box;
-
-      margin: 0;
-
-      padding: 0;
-
-    }
-
-
-
-    body {
-
-      background: var(--bg);
-
-      color: var(--text);
-
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-      line-height: 1.5;
-
-    }
-
-
-
-    /* الهيرو */
-
-    .hero {
-
-      min-height: 100vh;
-
-      width: 100%;
-
-      background-image: url("images/house-horizontal.jpg");
-
-      background-size: cover;
-
-      background-position: center 20%;
-
-      background-repeat: no-repeat;
-
-      position: relative;
-
-      display: flex;
-
-      flex-direction: column;
-
-    }
-
-
-
-    /* parallax على الشاشات الكبيرة فقط */
-
-    @media (min-width: 900px) {
-
-      .hero {
-
-        background-attachment: fixed;
-
-      }
-
-    }
-
-
-
-    .overlay {
-
-      background: var(--overlay);
-
-      position: absolute;
-
-      inset: 0;
-
-    }
-
-
-
-    header {
-
-      position: relative;
-
-      z-index: 2;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      padding: 1.4rem 1.6rem 0.3rem;
-
-    }
-
-
-
-    .brand {
-
-      font-weight: 700;
-
-      font-size: 1.05rem;
-
-      letter-spacing: 0.03em;
-
-    }
-
-
-
-    .lang-btn {
-
-      background: transparent;
-
-      border: 1.8px solid var(--gold);
-
-      color: var(--gold);
-
-      border-radius: 999px;
-
-      padding: 0.45rem 1.4rem;
-
-      font-weight: 600;
-
-      cursor: pointer;
-
-      transition: 0.2s;
-
-    }
-
-    .lang-btn:hover {
-
-      background: rgba(233, 182, 35, 0.12);
-
-    }
-
-
-
-    .hero-content {
-
-      position: relative;
-
-      z-index: 2;
-
-      flex: 1;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: center;
-
-      align-items: center;
-
-      text-align: center;
-
-      padding: 3.3rem 1.2rem 2.5rem;
-
-      max-width: var(--max-width);
-
-      margin: 0 auto;
-
-    }
-
-
-
-    h1 {
-
-      font-size: clamp(2.35rem, 3vw, 3rem);
-
-      font-weight: 800;
-
-      margin-bottom: 0.7rem;
-
-      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
-
-    }
-
-
-
-    .tagline {
-
-      max-width: 43rem;
-
-      font-size: 0.95rem;
-
-      text-shadow: 0 3px 16px rgba(0, 0, 0, 0.55);
-
-    }
-
-
-
-    .cta {
-
-      margin-top: 1.3rem;
-
-      background: var(--gold);
-
-      border: none;
-
-      color: #1b1305;
-
-      font-weight: 700;
-
-      padding: 0.55rem 2.5rem;
-
-      border-radius: 999px;
-
-      cursor: pointer;
-
-      font-size: 0.95rem;
-
-      transition: transform 0.15s ease-out;
-
-    }
-
-    .cta:hover {
-
-      transform: translateY(-2px);
-
-    }
-
-
-
-    footer {
-
-      position: relative;
-
-      z-index: 2;
-
-      text-align: center;
-
-      padding: 0 1rem 1.1rem;
-
-      font-size: 0.75rem;
-
-      color: rgba(255, 255, 255, 0.75);
-
-      text-shadow: 0 3px 14px rgba(0,0,0,0.6);
-
-    }
-
-
-
-    /* قسم الأرشيف تحت */
-
-    #archive {
-
-      background: #0a0a0a;
-
-      padding: 3.2rem 1.2rem 4rem;
-
-    }
-
-    .section-title {
-
-      text-align: center;
-
-      font-size: 1.4rem;
-
-      font-weight: 700;
-
-      margin-bottom: 2.1rem;
-
-    }
-
-    .archive-grid {
-
-      max-width: 1100px;
-
-      margin: 0 auto;
-
-      display: grid;
-
-      gap: 1.4rem;
-
-    }
-
-    @media (min-width: 760px) {
-
-      .archive-grid {
-
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-
-      }
-
-    }
-
-    .card {
-
-      background: radial-gradient(circle at top, rgba(233,182,35,0.12), rgba(0,0,0,0.12));
-
-      border: 1px solid rgba(233,182,35,0.12);
-
-      border-radius: 1rem;
-
-      padding: 1.2rem 1.1rem 1.3rem;
-
-      backdrop-filter: blur(6px);
-
-      min-height: 150px;
-
-    }
-
-    .card h3 {
-
-      font-size: 1rem;
-
-      margin-bottom: 0.5rem;
-
-      color: #fff;
-
-    }
-
-    .card p {
-
-      font-size: 0.8rem;
-
-      color: rgba(255,255,255,0.75);
-
-    }
-
-
-
-    /* موبايل */
-
-    @media (max-width: 599px) {
-
-      header {
-
-        padding-inline: 1rem;
-
-      }
-
-      .hero {
-
-        background-image: url("images/house-vertical.jpg");
-
-        background-position: center 0%;
-
-        background-size: cover;
-
-        background-attachment: scroll;
-
-      }
-
-      .hero-content {
-
-        padding-top: 2.2rem;
-
-      }
-
-      .cta {
-
-        width: fit-content;
-
-      }
-
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css" />
 
 </head>
 
-<body>
+<body class="landing">
 
-  <!-- HERO -->
+  <header class="topbar">
 
-  <section class="hero">
+    <div class="brand">New House of Wisdom</div>
 
-    <div class="overlay"></div>
+    <a href="#" id="langToggle" class="lang-btn">عربي</a>
 
-
-
-    <header>
-
-      <div class="brand" id="brandText">New House of Wisdom</div>
-
-      <button class="lang-btn" id="langBtn">عربي</button>
-
-    </header>
+  </header>
 
 
 
-    <div class="hero-content">
+  <main class="hero">
 
-      <h1 id="mainTitle">New House of Wisdom</h1>
+    <div class="hero-inner">
 
-      <p class="tagline" id="tagline">
+      <h1 id="heroTitle">New House of Wisdom</h1>
+
+      <p id="heroSubtitle">
 
         The New House of Wisdom – a digital platform that brings together Baghdad’s scientific heritage in the Abbasid era: translation, manuscripts, and the Mustansiriya School.
 
       </p>
 
-      <button class="cta" id="enterBtn">Enter the archive</button>
+      <a href="archive.html" class="cta" id="heroBtn">Enter the archive</a>
 
     </div>
 
-
-
-    <footer>
-
-      <span id="footerText">© New House of Wisdom | Baghdad Digital Heritage 2025</span>
-
-    </footer>
-
-  </section>
+  </main>
 
 
 
-  <!-- ARCHIVE SECTION -->
+  <footer class="footer">
 
-  <section id="archive">
+    © New House of Wisdom | Baghdad Digital Heritage 2025
 
-    <h2 class="section-title" id="archiveTitle">Archive Sections</h2>
-
-    <div class="archive-grid">
-
-      <div class="card">
-
-        <h3 id="sec1">Translations & Scientific Texts</h3>
-
-        <p id="sec1p">Texts translated in Baghdad during the Golden Age, from Greek, Syriac, and Persian sources.</p>
-
-      </div>
-
-      <div class="card">
-
-        <h3 id="sec2">Manuscripts</h3>
-
-        <p id="sec2p">High-quality digitized manuscripts, indexed by topic, date, and author.</p>
-
-      </div>
-
-      <div class="card">
-
-        <h3 id="sec3">Mustansiriya Heritage</h3>
-
-        <p id="sec3p">Visual and textual materials about the Mustansiriya School on the Tigris.</p>
-
-      </div>
-
-    </div>
-
-  </section>
+  </footer>
 
 
 
   <script>
 
-    // زر انزل للأرشيف
+    // لغة بسيطة بين عربي/انجليزي للصفحة الرئيسية
 
-    document.getElementById("enterBtn").addEventListener("click", function () {
+    const langBtn = document.getElementById("langToggle");
 
-      const arch = document.getElementById("archive");
+    const title = document.getElementById("heroTitle");
 
-      arch.scrollIntoView({ behavior: "smooth" });
+    const subtitle = document.getElementById("heroSubtitle");
 
-    });
-
-
-
-    // تبديل اللغة
-
-    let currentLang = "en";
-
-    const langBtn = document.getElementById("langBtn");
-
-    const brandText = document.getElementById("brandText");
-
-    const mainTitle = document.getElementById("mainTitle");
-
-    const tagline = document.getElementById("tagline");
-
-    const footerText = document.getElementById("footerText");
-
-    const archiveTitle = document.getElementById("archiveTitle");
-
-    const sec1 = document.getElementById("sec1");
-
-    const sec1p = document.getElementById("sec1p");
-
-    const sec2 = document.getElementById("sec2");
-
-    const sec2p = document.getElementById("sec2p");
-
-    const sec3 = document.getElementById("sec3");
-
-    const sec3p = document.getElementById("sec3p");
-
-    const enterBtn = document.getElementById("enterBtn");
+    const btn = document.getElementById("heroBtn");
 
 
 
-    langBtn.addEventListener("click", () => {
-
-      if (currentLang === "en") {
-
-        currentLang = "ar";
-
-        document.documentElement.lang = "ar";
-
-        document.body.style.direction = "rtl";
+    let current = "en";
 
 
 
-        langBtn.textContent = "English";
+    langBtn.addEventListener("click", (e) => {
 
-        brandText.textContent = "بيت الحكمة الجديد";
+      e.preventDefault();
 
-        mainTitle.textContent = "بيت الحكمة الجديد";
+      if (current === "en") {
 
-        tagline.textContent =
+        current = "ar";
 
-          "منصة رقمية تجمع تراث بغداد العلمي في العصر العباسي: الترجمة، المخطوطات، والمدرسة المستنصرية.";
+        document.documentElement.setAttribute("dir", "rtl");
 
-        footerText.textContent =
+        document.body.classList.add("rtl");
 
-          "© بيت الحكمة الجديد | التراث الرقمي لبغداد 2025";
+        title.textContent = "بيت الحكمة الجديد";
 
-        archiveTitle.textContent = "أقسام الأرشيف";
+        subtitle.textContent =
 
-        sec1.textContent = "الترجمات والنصوص العلمية";
+          "منصة رقمية تجمع تراث بغداد العلمي في العصر العباسي: حركة الترجمة، المخطوطات، والمدرسة المستنصرية.";
 
-        sec1p.textContent =
+        btn.textContent = "ادخل إلى الأرشيف";
 
-          "نصوص ومتون تُرجِمت في بغداد زمن الازدهار من اليونانية والسريانية والفارسية.";
-
-        sec2.textContent = "المخطوطات";
-
-        sec2p.textContent =
-
-          "مخطوطات رقمية عالية الجودة، مفهرسة حسب الموضوع والتاريخ والمؤلف.";
-
-        sec3.textContent = "المدرسة المستنصرية";
-
-        sec3p.textContent =
-
-          "مواد بصرية ونصية عن المدرسة المستنصرية على ضفة دجلة.";
-
-        enterBtn.textContent = "ادخل الأرشيف";
+        langBtn.textContent = "EN";
 
       } else {
 
-        currentLang = "en";
+        current = "en";
 
-        document.documentElement.lang = "en";
+        document.documentElement.removeAttribute("dir");
 
-        document.body.style.direction = "ltr";
+        document.body.classList.remove("rtl");
 
+        title.textContent = "New House of Wisdom";
 
-
-        langBtn.textContent = "عربي";
-
-        brandText.textContent = "New House of Wisdom";
-
-        mainTitle.textContent = "New House of Wisdom";
-
-        tagline.textContent =
+        subtitle.textContent =
 
           "The New House of Wisdom – a digital platform that brings together Baghdad’s scientific heritage in the Abbasid era: translation, manuscripts, and the Mustansiriya School.";
 
-        footerText.textContent =
+        btn.textContent = "Enter the archive";
 
-          "© New House of Wisdom | Baghdad Digital Heritage 2025";
-
-        archiveTitle.textContent = "Archive Sections";
-
-        sec1.textContent = "Translations & Scientific Texts";
-
-        sec1p.textContent =
-
-          "Texts translated in Baghdad during the Golden Age, from Greek, Syriac, and Persian sources.";
-
-        sec2.textContent = "Manuscripts";
-
-        sec2p.textContent =
-
-          "High-quality digitized manuscripts, indexed by topic, date, and author.";
-
-        sec3.textContent = "Mustansiriya Heritage";
-
-        sec3p.textContent =
-
-          "Visual and textual materials about the Mustansiriya School on the Tigris.";
-
-        enterBtn.textContent = "Enter the archive";
+        langBtn.textContent = "عربي";
 
       }
 
