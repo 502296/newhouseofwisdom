@@ -2,122 +2,130 @@
 
 <html lang="en">
 
-<head>
+  <head>
 
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>New House of Wisdom</title>
+    <title>New House of Wisdom</title>
 
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
 
-</head>
+  </head>
 
-<body class="landing">
+  <body data-lang="en">
 
-  <header class="topbar">
+    <header class="topbar">
 
-    <div class="brand">New House of Wisdom</div>
+      <div class="brand" data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">
 
-    <a href="#" id="langToggle" class="lang-btn">عربي</a>
+        New House of Wisdom
 
-  </header>
+      </div>
 
+      <nav>
 
+        <a href="archive.html" data-en="Archive" data-ar="الأرشيف">Archive</a>
 
-  <main class="hero">
+        <a href="gallery.html" data-en="Gallery" data-ar="المعرض">Gallery</a>
 
-    <div class="hero-inner">
+      </nav>
 
-      <h1 id="heroTitle">New House of Wisdom</h1>
+      <button id="langToggle" class="lang-btn">عربي</button>
 
-      <p id="heroSubtitle">
-
-        The New House of Wisdom – a digital platform that brings together Baghdad’s scientific heritage in the Abbasid era: translation, manuscripts, and the Mustansiriya School.
-
-      </p>
-
-      <a href="archive.html" class="cta" id="heroBtn">Enter the archive</a>
-
-    </div>
-
-  </main>
+    </header>
 
 
 
-  <footer class="footer">
+    <main class="hero" style="background-image:url('images/house-horizontal.jpg');">
 
-    © New House of Wisdom | Baghdad Digital Heritage 2025
+      <div class="overlay"></div>
 
-  </footer>
+      <div class="hero-content">
+
+        <h1
+
+          class="hero-title"
+
+          data-en="New House of Wisdom"
+
+          data-ar="بيت الحكمة الجديد"
+
+        >
+
+          New House of Wisdom
+
+        </h1>
+
+        <p
+
+          class="hero-subtitle"
+
+          data-en="The New House of Wisdom – a digital platform that brings together Baghdad’s scientific heritage in the Abbasid era: translation, manuscripts, and the Mustansiriya School."
+
+          data-ar="بيت الحكمة الجديد – منصة رقمية تجمع التراث العلمي لبغداد في العصر العباسي: الترجمة، المخطوطات، والمدرسة المستنصرية."
+
+        >
+
+          The New House of Wisdom – a digital platform that brings together
+
+          Baghdad’s scientific heritage in the Abbasid era: translation,
+
+          manuscripts, and the Mustansiriya School.
+
+        </p>
+
+        <a href="archive.html" class="primary-btn" data-en="Enter the archive" data-ar="ادخل الأرشيف">
+
+          Enter the archive
+
+        </a>
+
+      </div>
+
+    </main>
 
 
 
-  <script>
+    <footer class="site-footer">
 
-    // لغة بسيطة بين عربي/انجليزي للصفحة الرئيسية
+      © New House of Wisdom | Baghdad Digital Heritage 2025
 
-    const langBtn = document.getElementById("langToggle");
-
-    const title = document.getElementById("heroTitle");
-
-    const subtitle = document.getElementById("heroSubtitle");
-
-    const btn = document.getElementById("heroBtn");
+    </footer>
 
 
 
-    let current = "en";
+    <script>
 
+      const btn = document.getElementById("langToggle");
 
+      const html = document.documentElement;
 
-    langBtn.addEventListener("click", (e) => {
+      const switchLang = () => {
 
-      e.preventDefault();
+        const isEn = document.body.getAttribute("data-lang") === "en";
 
-      if (current === "en") {
+        document.body.setAttribute("data-lang", isEn ? "ar" : "en");
 
-        current = "ar";
+        btn.textContent = isEn ? "EN" : "عربي";
 
-        document.documentElement.setAttribute("dir", "rtl");
+        // change dir
 
-        document.body.classList.add("rtl");
+        document.body.style.direction = isEn ? "rtl" : "ltr";
 
-        title.textContent = "بيت الحكمة الجديد";
+        document.querySelectorAll("[data-en]").forEach((el) => {
 
-        subtitle.textContent =
+          el.textContent = isEn ? el.dataset.ar : el.dataset.en;
 
-          "منصة رقمية تجمع تراث بغداد العلمي في العصر العباسي: حركة الترجمة، المخطوطات، والمدرسة المستنصرية.";
+        });
 
-        btn.textContent = "ادخل إلى الأرشيف";
+      };
 
-        langBtn.textContent = "EN";
+      btn.addEventListener("click", switchLang);
 
-      } else {
+    </script>
 
-        current = "en";
-
-        document.documentElement.removeAttribute("dir");
-
-        document.body.classList.remove("rtl");
-
-        title.textContent = "New House of Wisdom";
-
-        subtitle.textContent =
-
-          "The New House of Wisdom – a digital platform that brings together Baghdad’s scientific heritage in the Abbasid era: translation, manuscripts, and the Mustansiriya School.";
-
-        btn.textContent = "Enter the archive";
-
-        langBtn.textContent = "عربي";
-
-      }
-
-    });
-
-  </script>
-
-</body>
+  </body>
 
 </html>
