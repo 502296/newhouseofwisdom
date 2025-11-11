@@ -16,19 +16,17 @@
 
       --gold: #d4af37;
 
-      --bg: #0f0b09;
-
-      --ink: #fffaf0;
+      --light: #fffaf0;
 
     }
 
     * {
 
+      box-sizing: border-box;
+
       margin: 0;
 
       padding: 0;
-
-      box-sizing: border-box;
 
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
@@ -36,15 +34,15 @@
 
     body {
 
-      background: var(--bg);
+      background: #000;
 
-      color: #fff;
+      color: var(--light);
+
+      overflow-x: hidden;
 
     }
 
 
-
-    /* header */
 
     header {
 
@@ -52,13 +50,13 @@
 
       top: 0;
 
-      left: 0;
-
       width: 100%;
 
-      z-index: 10;
+      z-index: 999;
 
-      padding: .7rem 5vw;
+      background: rgba(0, 0, 0, 0.45);
+
+      backdrop-filter: blur(8px);
 
       display: flex;
 
@@ -66,17 +64,9 @@
 
       align-items: center;
 
-      background: rgba(0,0,0,0.4);
+      padding: 0.6rem 6vw;
 
-      backdrop-filter: blur(10px);
-
-    }
-
-    .logo {
-
-      font-weight: 700;
-
-      font-size: 1.25rem;
+      color: #fff;
 
     }
 
@@ -84,205 +74,149 @@
 
     .lang-btn {
 
-      border: 1px solid var(--gold);
-
       background: transparent;
+
+      border: 1px solid var(--gold);
 
       color: var(--gold);
 
-      border-radius: 999px;
+      border-radius: 50px;
 
-      padding: .35rem 1rem;
+      padding: .4rem .9rem;
 
       cursor: pointer;
 
-      font-weight: 500;
+      transition: 0.3s;
 
     }
 
-
-
-    /* hero layout: عمودين: يسار فراغ مزخرف بسيط، وسط الصورة بالنص */
-
-    .hero {
-
-      min-height: 100vh;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding-top: 3.5rem; /* للهيدر */
-
-      background: radial-gradient(circle at top, #20150f 0%, #0f0b09 60%, #0a0807 100%);
-
-    }
-
-
-
-    .hero-inner {
-
-      width: min(1180px, 100%);
-
-      display: flex;
-
-      gap: 1.5rem;
-
-      padding: 0 1rem;
-
-      align-items: center;
-
-      justify-content: center;
-
-    }
-
-
-
-    /* العمود اللي فيه الصورة */
-
-    .hero-visual {
-
-      position: relative;
-
-      flex: 0 0 auto;
-
-      height: calc(100vh - 4rem);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-    }
-
-    .hero-visual img {
-
-      height: 100%;
-
-      width: auto;
-
-      display: block;
-
-      border-radius: 0;
-
-      box-shadow: 0 20px 40px rgba(0,0,0,.35);
-
-    }
-
-
-
-    /* النص فوق الصورة */
-
-    .hero-text {
-
-      position: absolute;
-
-      top: 50%;
-
-      left: 50%;
-
-      transform: translate(-50%, -50%);
-
-      text-align: center;
-
-      max-width: 360px;
-
-      text-shadow: 0 3px 12px rgba(0,0,0,.6);
-
-    }
-
-    .hero-text h1 {
-
-      font-size: 2.7rem;
-
-      color: var(--gold);
-
-      margin-bottom: .7rem;
-
-    }
-
-    .hero-text p {
-
-      font-size: 1rem;
-
-      line-height: 1.5;
-
-      margin-bottom: 1.1rem;
-
-      color: #fff;
-
-    }
-
-    .hero-text a {
-
-      display: inline-block;
+    .lang-btn:hover {
 
       background: var(--gold);
 
       color: #000;
 
-      padding: .55rem 1.4rem;
+    }
 
-      border-radius: 999px;
+
+
+    .hero {
+
+      position: relative;
+
+      height: 100vh;
+
+      width: 100%;
+
+      background: url("images/house-of-wisdom.jpg") center center no-repeat;
+
+      background-size: cover;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      color: var(--light);
+
+    }
+
+    .overlay {
+
+      position: absolute;
+
+      inset: 0;
+
+      background: rgba(0, 0, 0, 0.3);
+
+    }
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 700px;
+
+    }
+
+    h1 {
+
+      font-size: 2.8rem;
+
+      color: var(--gold);
+
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+
+      margin-bottom: 0.8rem;
+
+    }
+
+    p {
+
+      font-size: 1.1rem;
+
+      line-height: 1.6;
+
+      color: var(--light);
+
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+
+      margin-bottom: 1.5rem;
+
+    }
+
+    .btn {
+
+      background: var(--gold);
+
+      color: #000;
+
+      padding: 0.6rem 1.5rem;
+
+      border-radius: 50px;
+
+      text-decoration: none;
 
       font-weight: 600;
 
-      text-decoration: none;
+      transition: 0.3s;
+
+    }
+
+    .btn:hover {
+
+      background: #f8e08e;
 
     }
 
 
 
-    /* موبايل */
+    footer {
 
-    @media (max-width: 768px) {
+      background: #111;
 
-      .hero {
+      color: #aaa;
 
-        padding-top: 3.2rem;
+      text-align: center;
 
-      }
+      padding: 1rem 0;
 
-      .hero-inner {
+      font-size: 0.9rem;
 
-        padding: 0;
+    }
 
-      }
 
-      .hero-visual {
 
-        height: auto;
+    @media (max-width: 700px) {
 
-        width: 100%;
+      h1 { font-size: 2rem; }
 
-      }
-
-      .hero-visual img {
-
-        width: 100%;
-
-        height: auto; /* هنا راح ترجع تشوف الماء والانعكاس كامل */
-
-        box-shadow: none;
-
-      }
-
-      .hero-text {
-
-        top: 48%;
-
-        max-width: 82%;
-
-      }
-
-      .hero-text h1 {
-
-        font-size: 2.2rem;
-
-      }
+      p { font-size: 1rem; }
 
     }
 
@@ -310,31 +244,21 @@
 
 <section class="hero">
 
-  <div class="hero-inner">
+  <div class="overlay"></div>
 
-    <div class="hero-visual">
+  <div class="hero-content">
 
-      <!-- غيّر المسار حسب مجلدك -->
+    <h1 data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">New House of Wisdom</h1>
 
-      <img src="images/house-of-wisdom.jpg" alt="New House of Wisdom" />
+    <p data-en="A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris."
 
-      <div class="hero-text">
+       data-ar="منصة رقمية لإحياء تراث بغداد العلمي في العصر العباسي: الترجمة، المخطوطات، والمدرسة المستنصرية على ضفاف دجلة.">
 
-        <h1 data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">New House of Wisdom</h1>
+       A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris.
 
-        <p data-en="A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris."
+    </p>
 
-           data-ar="منصة رقمية لإحياء تراث بغداد العلمي في العصر العباسي: الترجمة، المخطوطات، والمدرسة المستنصرية على ضفاف دجلة.">
-
-           A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris.
-
-        </p>
-
-        <a href="#archive" data-en="Enter the archive" data-ar="ادخل الأرشيف">Enter the archive</a>
-
-      </div>
-
-    </div>
+    <a href="#archive" class="btn" data-en="Enter the archive" data-ar="ادخل الأرشيف">Enter the archive</a>
 
   </div>
 
@@ -342,15 +266,33 @@
 
 
 
+<footer>
+
+  <p data-en="New House of Wisdom • Baghdad Digital Heritage • 2025"
+
+     data-ar="بيت الحكمة الجديد • التراث الرقمي لبغداد • 2025">
+
+     New House of Wisdom • Baghdad Digital Heritage • 2025
+
+  </p>
+
+</footer>
+
+
+
 <script>
 
   const btn = document.getElementById('langToggle');
 
-  let current = 'en';
+  let currentLang = 'en';
 
-  function setLang(lang){
 
-    document.querySelectorAll('[data-en]').forEach(el=>{
+
+  function setLang(lang) {
+
+    const all = document.querySelectorAll('[data-en]');
+
+    all.forEach(el => {
 
       el.textContent = el.getAttribute(lang === 'ar' ? 'data-ar' : 'data-en');
 
@@ -358,13 +300,23 @@
 
     document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
 
+    document.documentElement.lang = (lang === 'ar') ? 'ar' : 'en';
+
     btn.textContent = (lang === 'ar') ? 'English' : 'عربي';
 
-    current = lang;
+    currentLang = lang;
 
   }
 
-  btn.addEventListener('click', ()=> setLang(current === 'en' ? 'ar' : 'en'));
+
+
+  btn.addEventListener('click', () => {
+
+    setLang(currentLang === 'en' ? 'ar' : 'en');
+
+  });
+
+
 
   setLang('en');
 
