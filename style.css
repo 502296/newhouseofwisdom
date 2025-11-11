@@ -1,0 +1,249 @@
+:root {
+
+  --bg: #0f1a2a;
+
+  --gold: #d4af37;
+
+  --light: #f8f7f3;
+
+  --text: #222;
+
+}
+
+
+
+* {
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+
+  font-family: "Noto Naskh Arabic", "Inter", sans-serif;
+
+}
+
+
+
+body {
+
+  background: var(--light);
+
+  color: var(--text);
+
+}
+
+
+
+/* HEADER */
+
+header {
+
+  background: rgba(15, 26, 42, 0.94);
+
+  color: white;
+
+  padding: 0.6rem 5vw;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  position: fixed;
+
+  top: 0;
+
+  width: 100%;
+
+  z-index: 999;
+
+  backdrop-filter: blur(10px);
+
+}
+
+
+
+header .logo {
+
+  font-weight: 700;
+
+  letter-spacing: 0.05rem;
+
+}
+
+
+
+header .logo span {
+
+  color: var(--gold);
+
+}
+
+
+
+nav a {
+
+  color: white;
+
+  text-decoration: none;
+
+  margin-left: 1.3rem;
+
+  font-size: 0.9rem;
+
+}
+
+
+
+nav a:hover {
+
+  color: var(--gold);
+
+}
+
+
+
+/* HERO SECTION */
+
+.hero {
+
+  margin-top: 60px;
+
+  min-height: 80vh;
+
+  background: linear-gradient(120deg, rgba(15, 26, 42, 0.8), rgba(15, 26, 42, 0.4)),
+
+    url("images/houseofwisdom-bg.jpg") center/cover no-repeat;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 0 5vw;
+
+}
+
+
+
+.hero h1 {
+
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+
+  margin-bottom: 1rem;
+
+}
+
+
+
+.hero h1 span {
+
+  color: var(--gold);
+
+}
+
+
+
+.hero p {
+
+  font-size: 1.1rem;
+
+  margin-bottom: 1.5rem;
+
+  line-height: 1.7;
+
+}
+
+
+
+.btn {
+
+  background: var(--gold);
+
+  color: var(--bg);
+
+  padding: 0.7rem 1.5rem;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+
+}
+
+
+
+.btn:hover {
+
+  background: #f4d36a;
+
+}
+
+
+
+/* SECTION */
+
+.section {
+
+  padding: 4rem 6vw 3rem;
+
+}
+
+
+
+.section h2 {
+
+  color: var(--bg);
+
+  margin-bottom: 1.2rem;
+
+}
+
+
+
+.section p {
+
+  line-height: 1.7;
+
+  max-width: 750px;
+
+}
+
+
+
+/* FOOTER */
+
+footer {
+
+  background: #0b1220;
+
+  color: #fff;
+
+  text-align: center;
+
+  padding: 1.5rem 1rem 2rem;
+
+  font-size: 0.9rem;
+
+  margin-top: 3rem;
+
+}
+
+
+
+footer span {
+
+  color: var(--gold);
+
+}
