@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Legacy of Wisdom | إرث الحكمة</title>
+
+  <style>
+
+    :root {
+
+      --bg: #0f1a2a;
+
+      --gold: #d4af37;
+
+      --light: #f5f5f5;
+
+      --text: #222;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+
+    body {
+
+      background: #f1f1f1;
+
+      color: var(--text);
+
+    }
+
+    header {
+
+      background: rgba(15, 26, 42, 0.9);
+
+      color: white;
+
+      padding: 0.6rem 5vw;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      position: fixed;
+
+      top: 0;
+
+      width: 100%;
+
+      z-index: 999;
+
+      backdrop-filter: blur(10px);
+
+    }
+
+    header .logo {
+
+      font-weight: 700;
+
+      letter-spacing: 0.1rem;
+
+    }
+
+    header .logo span {
+
+      color: var(--gold);
+
+    }
+
+    nav a {
+
+      color: white;
+
+      text-decoration: none;
+
+      margin-left: 1.5rem;
+
+      font-size: 0.9rem;
+
+    }
+
+    .hero {
+
+      margin-top: 60px;
+
+      height: 73vh;
+
+      background: linear-gradient(120deg, rgba(15, 26, 42, 0.8), rgba(15, 26, 42, 0.4)), 
+
+        url("PUT-YOUR-BAYT-AL-HIKMA-IMAGE-HERE.jpg") center/cover no-repeat;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 0 6vw;
+
+      color: white;
+
+      text-align: right;
+
+    }
+
+    .hero-content {
+
+      max-width: 630px;
+
+    }
+
+    .hero h1 {
+
+      font-size: clamp(2.4rem, 4.2vw, 3.2rem);
+
+      line-height: 1.15;
+
+      margin-bottom: 1rem;
+
+      color: #fff;
+
+    }
+
+    .hero h1 span {
+
+      color: var(--gold);
+
+    }
+
+    .hero p {
+
+      font-size: 1.02rem;
+
+      line-height: 1.7;
+
+      margin-bottom: 1.8rem;
+
+      color: #f2f2f2;
+
+    }
+
+    .btn {
+
+      display: inline-block;
+
+      background: var(--gold);
+
+      color: #0f1a2a;
+
+      padding: 0.6rem 1.4rem;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-weight: 600;
+
+      transition: 0.3s;
+
+    }
+
+    .btn:hover {
+
+      background: #f3d770;
+
+    }
+
+    .section {
+
+      padding: 4rem 6vw 3.5rem;
+
+      background: #fff;
+
+    }
+
+    .section.dark {
+
+      background: #0f1a2a;
+
+      color: #fff;
+
+    }
+
+    .section h2 {
+
+      margin-bottom: 1.8rem;
+
+      font-size: 1.6rem;
+
+      color: #0f1a2a;
+
+    }
+
+    .section.dark h2 {
+
+      color: #fff;
+
+    }
+
+    .cards {
+
+      display: grid;
+
+      gap: 1.5rem;
+
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+    }
+
+    .card {
+
+      background: #fff;
+
+      border-radius: 16px;
+
+      padding: 1.3rem 1.2rem 1.4rem;
+
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.06);
+
+      border: 1px solid rgba(212,175,55,0.18);
+
+    }
+
+    .card h3 {
+
+      margin-bottom: 0.6rem;
+
+      color: #0f1a2a;
+
+    }
+
+    .card p {
+
+      font-size: 0.9rem;
+
+      line-height: 1.6;
+
+    }
+
+    .timeline {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+      gap: 1.2rem;
+
+      margin-top: 1.3rem;
+
+    }
+
+    .timeline-item {
+
+      background: rgba(255,255,255,0.03);
+
+      border: 1px solid rgba(212,175,55,0.4);
+
+      padding: 1rem;
+
+      border-radius: 14px;
+
+    }
+
+    footer {
+
+      background: #0b1220;
+
+      color: #fff;
+
+      text-align: center;
+
+      padding: 1.5rem 1rem 2rem;
+
+      font-size: 0.8rem;
+
+      margin-top: 3rem;
+
+    }
+
+    footer span {
+
+      color: var(--gold);
+
+    }
+
+    @media (max-width: 720px) {
+
+      nav {
+
+        display: none;
+
+      }
+
+      .hero {
+
+        text-align: center;
+
+      }
+
+      .hero-content {
+
+        max-width: 100%;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+
+  <header>
+
+    <div class="logo">Legacy <span>of</span> Wisdom</div>
+
+    <nav>
+
+      <a href="#about">عن المنصة</a>
+
+      <a href="#sections">الأقسام</a>
+
+      <a href="#timeline">الزمن العباسي</a>
+
+      <a href="#contact">تواصل</a>
+
+    </nav>
+
+  </header>
+
+
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Legacy of <span>Wisdom</span></h1>
+
+      <p>
+
+        منصة رقمية لإحياء تراث بغداد في عصرها العباسي الذهبي: بيت الحكمة، العلماء، الفنون، والعمارة.
+
+        نعيد تقديم المعرفة بروح العصر، ونربط الماضي بالمستقبل.
+
+      </p>
+
+      <a href="#sections" class="btn">ادخل الأرشيف</a>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="section" id="about">
+
+    <h2>عن المنصة</h2>
+
+    <p style="max-width: 680px; line-height: 1.8;">
+
+      “Legacy of Wisdom” مشروع غير ربحي يهدف إلى جمع المواد المرئية والنصية والبحثية الخاصة بالعصر العباسي في بغداد،
+
+      مع إبراز بيت الحكمة بوصفه رمزًا لنهضة علمية وفنية مبكرة في تاريخنا.
+
+      يمكن إضافة المخطوطات، الصور الأصلية التي ستلتقطها من بغداد، والخرائط الزمنية للعلماء.
+
+    </p>
+
+  </section>
+
+
+
+  <section class="section" id="sections">
+
+    <h2>الأقسام الرئيسة</h2>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>بيت الحكمة</h3>
+
+        <p>تعريف، صور، خرائط، وأهم العلماء والمترجمين الذين مرّوا به، مع إبراز دوره في نقل العلوم.</p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>العلم والفلسفة</h3>
+
+        <p>مختارات من التراث العلمي: الطب، الرياضيات، الفلك، المنطق، مع نسخ مترجمة للإنجليزية.</p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>الفنون والعمارة</h3>
+
+        <p>صور من المدرسة المستنصرية، النقوش، الخط العباسي، والموسيقى في البلاط العباسي.</p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>الأدب والشعر</h3>
+
+        <p>مختارات من شعراء العصر الذهبي، بصوتٍ معاصر، مع شروح قصيرة.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="section dark" id="timeline">
+
+    <h2>خط زمني للعصر العباسي</h2>
+
+    <p>ملامح من إشعاع النور العلمي بين بغداد وسائر حواضر الإسلام.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+
+        <h4>132 هـ / 750 م</h4>
+
+        <p>قيام الدولة العباسية وبدء انتقال الثقل العلمي إلى بغداد.</p>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <h4>عهد المأمون</h4>
+
+        <p>ذروة بيت الحكمة وحركة الترجمة من اليونانية والسريانية والفارسية.</p>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <h4>ازدهار الطب</h4>
+
+        <p>نشاط كبير لأطباء بغداد مثل حنين بن إسحاق، الرازي، وابن سينا لاحقًا.</p>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <h4>الفنون</h4>
+
+        <p>نشوء الذائقة البغدادية في العمارة والزخرفة والموسيقى.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="section" id="contact">
+
+    <h2>تواصل وإسهام</h2>
+
+    <p style="max-width:650px; line-height:1.8;">
+
+      إذا كانت لديك صور أصلية من بغداد، أو مخطوطات، أو مادة بحثية عن العصر العباسي،
+
+      يمكن إضافتها إلى هذا الأرشيف مع حفظ الحقوق.
+
+      الهدف أن نبني معًا متحفًا رقميًا مفتوحًا لبغداد المضيئة.
+
+    </p>
+
+  </section>
+
+
+
+  <footer>
+
+    <p>Legacy of Wisdom – Baghdad Digital Heritage • 2025</p>
+
+    <p><span>Prepared by: Ali Kathem</span></p>
+
+  </footer>
+
+
+
+</body>
+
+</html>
