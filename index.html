@@ -10,8 +10,6 @@
 
     <title>New House of Wisdom</title>
 
-    <link rel="icon" href="images/house-vertical.jpg" />
-
     <style>
 
       :root {
@@ -51,6 +49,8 @@
       }
 
 
+
+      /* ========== HEADER ========== */
 
       header {
 
@@ -110,17 +110,11 @@
 
 
 
+      /* ========== HERO ========== */
+
       main {
 
         min-height: 100vh;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        padding: 90px 3vw 40px;
 
       }
 
@@ -128,9 +122,13 @@
 
       .hero {
 
-        width: min(1200px, 100%);
+        /* نخليها تاخذ تقريباً كل الشاشة تحت الهيدر */
 
-        aspect-ratio: 3 / 1.35; /* نعطيه نسبة عرض ثابتة لسطح المكتب */
+        margin-top: 70px;
+
+        height: calc(100vh - 70px);
+
+        width: 100%;
 
         background-image: url("images/house-horizontal.jpg");
 
@@ -140,21 +138,19 @@
 
         background-repeat: no-repeat;
 
-        border-radius: 0;
-
-        position: relative;
-
         display: flex;
 
         align-items: center;
 
         justify-content: center;
 
+        position: relative;
+
       }
 
 
 
-      /* طبقة خفيفة للتباين */
+      /* طبقة تباين خفيفة */
 
       .hero::after {
 
@@ -164,7 +160,15 @@
 
         inset: 0;
 
-        background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,.35) 90%);
+        background: radial-gradient(
+
+          circle at center,
+
+          rgba(0, 0, 0, 0) 35%,
+
+          rgba(0, 0, 0, 0.35) 100%
+
+        );
 
       }
 
@@ -176,7 +180,9 @@
 
         text-align: center;
 
-        max-width: 540px;
+        max-width: 640px;
+
+        padding: 0 16px;
 
       }
 
@@ -200,9 +206,9 @@
 
       p.subtitle {
 
-        font-size: 0.98rem;
+        font-size: 1rem;
 
-        line-height: 1.5;
+        line-height: 1.55;
 
         text-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 
@@ -240,7 +246,7 @@
 
         text-align: center;
 
-        padding: 16px;
+        padding: 14px;
 
         font-size: 0.75rem;
 
@@ -250,21 +256,15 @@
 
 
 
-      /* موبايل */
+      /* ====== موبايل ====== */
 
       @media (max-width: 768px) {
 
         .hero {
 
-          width: 100%;
-
-          /* في الموبايل نرجع للصورة العمودية */
-
           background-image: url("images/house-vertical.jpg");
 
-          aspect-ratio: auto;
-
-          min-height: calc(100vh - 80px);
+          height: calc(100vh - 70px);
 
         }
 
@@ -314,11 +314,11 @@
 
           <p class="subtitle" id="hero-subtitle">
 
-            A digital initiative to revive Baghdad’s Golden Age knowledge:
+            The New House of Wisdom — a digital platform that brings together
 
-            translation, manuscripts, and the Mustansiriya heritage on the
+            Baghdad’s scientific heritage in the Abbasid era: translation,
 
-            Tigris.
+            manuscripts, and the Mustansiriya School.
 
           </p>
 
@@ -342,8 +342,6 @@
 
     <script>
 
-      // لغة البداية
-
       let currentLang = "en";
 
 
@@ -364,11 +362,29 @@
 
 
 
+      function setHeroImage() {
+
+        if (window.innerWidth <= 768) {
+
+          hero.style.backgroundImage = "url('images/house-vertical.jpg')";
+
+        } else {
+
+          hero.style.backgroundImage = "url('images/house-horizontal.jpg')";
+
+        }
+
+      }
+
+      setHeroImage();
+
+      window.addEventListener("resize", setHeroImage);
+
+
+
       langToggle.addEventListener("click", () => {
 
         if (currentLang === "en") {
-
-          // إلى العربية
 
           currentLang = "ar";
 
@@ -376,13 +392,15 @@
 
           document.body.dir = "rtl";
 
+
+
           siteTitle.textContent = "بيت الحكمة الجديد";
 
           heroTitle.textContent = "بيت الحكمة الجديد";
 
           heroSubtitle.textContent =
 
-            "مبادرة رقمية لإحياء تراث بغداد العلمي في العصر العباسي: الترجمة، المخطوطات، والمدرسة المستنصرية على دجلة.";
+            "بيت الحكمة الجديد — منصة رقمية تجمع التراث العلمي لبغداد في العصر العباسي: الترجمة، المخطوطات، والمدرسة المستنصرية.";
 
           heroButton.textContent = "ادخل الأرشيف";
 
@@ -392,21 +410,7 @@
 
             "© بيت الحكمة الجديد | التراث الرقمي لبغداد 2025";
 
-          // في العربية – احتفظ بنفس الصورة الأفقية على الديسكتوب
-
-          if (window.innerWidth <= 768) {
-
-            hero.style.backgroundImage = "url('images/house-vertical.jpg')";
-
-          } else {
-
-            hero.style.backgroundImage = "url('images/house-horizontal.jpg')";
-
-          }
-
         } else {
-
-          // إلى الانجليزية
 
           currentLang = "en";
 
@@ -414,13 +418,15 @@
 
           document.body.dir = "ltr";
 
+
+
           siteTitle.textContent = "New House of Wisdom";
 
           heroTitle.textContent = "New House of Wisdom";
 
           heroSubtitle.textContent =
 
-            "A digital initiative to revive Baghdad’s Golden Age knowledge: translation, manuscripts, and the Mustansiriya heritage on the Tigris.";
+            "The New House of Wisdom — a digital platform that brings together Baghdad’s scientific heritage in the Abbasid era: translation, manuscripts, and the Mustansiriya School.";
 
           heroButton.textContent = "Enter the archive";
 
@@ -429,16 +435,6 @@
           footerText.textContent =
 
             "© New House of Wisdom | Baghdad Digital Heritage 2025";
-
-          if (window.innerWidth <= 768) {
-
-            hero.style.backgroundImage = "url('images/house-vertical.jpg')";
-
-          } else {
-
-            hero.style.backgroundImage = "url('images/house-horizontal.jpg')";
-
-          }
 
         }
 
