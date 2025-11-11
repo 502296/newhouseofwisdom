@@ -100,6 +100,8 @@
 
 
 
+    /* الحالة الافتراضية = موبايل / شاشات صغيرة */
+
     .hero {
 
       position: relative;
@@ -110,7 +112,7 @@
 
       background: #000 url("images/house-of-wisdom.jpg") center top no-repeat;
 
-      background-size: contain; /* الصورة كاملة */
+      background-size: contain;           /* الموبايل مضبوط */
 
       display: flex;
 
@@ -125,8 +127,6 @@
     }
 
 
-
-    /* طبقة خفيفة ناعمة فوق الصورة */
 
     .overlay {
 
@@ -233,6 +233,22 @@
       h1 { font-size: 2rem; }
 
       p { font-size: 1rem; }
+
+    }
+
+
+
+    /* هنا التعديل المهم: لما الشاشة تكبر نخليها cover */
+
+    @media (min-width: 900px) {
+
+      .hero {
+
+        background-size: cover;        /* تملأ الشاشة بالكامل */
+
+        background-position: center;   /* وسط */
+
+      }
 
     }
 
