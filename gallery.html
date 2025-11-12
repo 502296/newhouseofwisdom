@@ -32,7 +32,7 @@
 
       margin: 0;
 
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 
       background: var(--page-bg);
 
@@ -196,15 +196,11 @@
 
     @media (min-width: 750px) {
 
-      .sections {
+      .sections,
 
-        max-width: 780px;
+      .topbar,
 
-        margin: 0 auto;
-
-      }
-
-      .topbar, .page-title {
+      .page-title {
 
         max-width: 780px;
 
@@ -222,13 +218,13 @@
 
   <header class="topbar">
 
-    <div class="brand">New House of Wisdom</div>
+    <div class="brand" data-en="New House of Wisdom" data-ar="دار الحكمة الجديدة">New House of Wisdom</div>
 
     <div>
 
-      <a href="archive.html" class="btn-inline">Back</a>
+      <a href="archive.html" class="btn-inline" data-en="Back" data-ar="رجوع">Back</a>
 
-      <a href="#" class="btn-inline">عربي</a>
+      <button id="langBtn" class="btn-inline">عربي</button>
 
     </div>
 
@@ -240,9 +236,13 @@
 
     <div class="page-title">
 
-      <h1>Manuscript & Heritage Gallery</h1>
+      <h1 data-en="Manuscript & Heritage Gallery" data-ar="معرض المخطوطات والتراث">Manuscript & Heritage Gallery</h1>
 
-      <p class="subtitle">
+      <p class="subtitle"
+
+         data-en="Visual and digitized materials from Baghdad’s Abbasid and Mustansiriya legacy, organized for scholars and students."
+
+         data-ar="مواد مرئية ورقمية من التراث العباسي والمستنصري في بغداد، منظّمة للباحثين والطلبة.">
 
         Visual and digitized materials from Baghdad’s Abbasid and Mustansiriya legacy, organized for scholars and students.
 
@@ -254,35 +254,35 @@
 
     <div class="sections">
 
-      <!-- 1. Illuminated Manuscripts -->
+      <!-- 1 -->
 
       <section class="section-card">
 
-        <div class="section-title">Illuminated Manuscripts</div>
+        <div class="section-title" data-en="Illuminated Manuscripts" data-ar="المخطوطات المذهّبة">Illuminated Manuscripts</div>
 
-        <div class="section-desc">Digitized folios, ornamented pages, and codices produced in Baghdad.</div>
+        <div class="section-desc"
 
-        <div class="item">
+             data-en="Digitized folios, ornamented pages, and codices produced in Baghdad."
 
-          <div class="item-title">Baghdad_Illuminated_Folio_001.jpg</div>
+             data-ar="أوراق وصفحات مزخرفة ومجلدات رقمية أُنتجت في بغداد.">
 
-          <div class="item-actions">
-
-            <a href="#">Download</a>
-
-          </div>
+          Digitized folios, ornamented pages, and codices produced in Baghdad.
 
         </div>
 
         <div class="item">
 
-          <div class="item-title">Qurʾanic_Mashhad_Page_Abbasid.jpg</div>
+          <div class="item-title">Baghdad_Illuminated_Folio_001.jpg</div>
 
-          <div class="item-actions">
+          <div class="item-actions"><a href="#">Download</a></div>
 
-            <a href="#">Download</a>
+        </div>
 
-          </div>
+        <div class="item">
+
+          <div class="item-title">Qur’anic_Mashhad_Page_Abbasid.jpg</div>
+
+          <div class="item-actions"><a href="#">Download</a></div>
 
         </div>
 
@@ -290,23 +290,31 @@
 
 
 
-      <!-- 2. Scientific & Philosophical Treatises -->
+      <!-- 2 -->
 
       <section class="section-card">
 
-        <div class="section-title">Scientific &amp; Philosophical Treatises</div>
+        <div class="section-title" data-en="Scientific & Philosophical Treatises" data-ar="الرسائل العلمية والفلسفية">
 
-        <div class="section-desc">Visual records of medical, mathematical, and logical works copied or translated in Baghdad.</div>
+          Scientific &amp; Philosophical Treatises
+
+        </div>
+
+        <div class="section-desc"
+
+             data-en="Visual records of medical, mathematical, and logical works copied or translated in Baghdad."
+
+             data-ar="مواد بصرية لكتب طبية ورياضية ومنطقية نُسخت أو تُرجمت في بغداد.">
+
+          Visual records of medical, mathematical, and logical works copied or translated in Baghdad.
+
+        </div>
 
         <div class="item">
 
           <div class="item-title">Hunayn_Medicine_Notes.jpg</div>
 
-          <div class="item-actions">
-
-            <a href="#">Download</a>
-
-          </div>
+          <div class="item-actions"><a href="#">Download</a></div>
 
         </div>
 
@@ -314,11 +322,7 @@
 
           <div class="item-title">Euclid_Arabic_Diagrams.png</div>
 
-          <div class="item-actions">
-
-            <a href="#">Download</a>
-
-          </div>
+          <div class="item-actions"><a href="#">Download</a></div>
 
         </div>
 
@@ -326,47 +330,31 @@
 
 
 
-      <!-- 3. House of Wisdom Artifacts -->
+      <!-- 3 -->
 
       <section class="section-card">
 
-        <div class="section-title">House of Wisdom Artifacts</div>
+        <div class="section-title" data-en="House of Wisdom Artifacts" data-ar="وثائق بيت الحكمة">
 
-        <div class="section-desc">Reconstructed images, maps, and architectural references to the Bayt al-Hikma.</div>
+          House of Wisdom Artifacts
+
+        </div>
+
+        <div class="section-desc"
+
+             data-en="Reconstructed images, maps, and architectural references to the Bayt al-Hikma."
+
+             data-ar="صور معاد تكوينها وخرائط ومراجع معمارية لبيت الحكمة.">
+
+          Reconstructed images, maps, and architectural references to the Bayt al-Hikma.
+
+        </div>
 
         <div class="item">
 
           <div class="item-title">Bayt_al_Hikma_Reconstruction_2025.jpg</div>
 
-          <div class="item-actions">
-
-            <a href="#">Download</a>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- 4. Mustansiriya Heritage -->
-
-      <section class="section-card">
-
-        <div class="section-title">Mustansiriya Heritage</div>
-
-        <div class="section-desc">Archival visuals of the Mustansiriya complex, façades, and inscriptions.</div>
-
-        <div class="item">
-
-          <div class="item-title">Mustansiriya_Facade_01.jpg</div>
-
-          <div class="item-actions">
-
-            <a href="#">Download</a>
-
-          </div>
+          <div class="item-actions"><a href="#">Download</a></div>
 
         </div>
 
@@ -383,6 +371,34 @@
     © New House of Wisdom | Baghdad Digital Heritage 2025
 
   </footer>
+
+
+
+  <script>
+
+    const btn = document.getElementById('langBtn');
+
+    let current = 'en';
+
+
+
+    btn.addEventListener('click', () => {
+
+      current = current === 'en' ? 'ar' : 'en';
+
+      document.querySelectorAll('[data-en]').forEach(el => {
+
+        el.textContent = el.getAttribute(current === 'en' ? 'data-en' : 'data-ar');
+
+      });
+
+      btn.textContent = current === 'en' ? 'عربي' : 'English';
+
+      document.documentElement.lang = current === 'en' ? 'en' : 'ar';
+
+    });
+
+  </script>
 
 </body>
 
