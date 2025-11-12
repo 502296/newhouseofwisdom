@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang="en" data-lang="en">
+<html lang="en">
 
 <head>
 
@@ -8,27 +8,227 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Manuscript & Heritage Gallery – New House of Wisdom</title>
+  <title>New House of Wisdom – Manuscript & Heritage Gallery</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    :root {
+
+      --page-bg: #f3e9d9;
+
+      --card-bg: #fffdf9;
+
+      --text: #2f2a25;
+
+      --muted: #736b63;
+
+      --accent: #c7a559;
+
+      --radius-lg: 18px;
+
+    }
+
+    body {
+
+      margin: 0;
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      background: var(--page-bg);
+
+      color: var(--text);
+
+    }
+
+    .topbar {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding: 1.1rem 1.4rem;
+
+    }
+
+    .brand {
+
+      font-weight: 600;
+
+      font-size: 0.9rem;
+
+    }
+
+    .btn-inline {
+
+      background: #fff;
+
+      border: 1.5px solid var(--accent);
+
+      color: #2f2a25;
+
+      padding: 0.35rem 0.95rem;
+
+      border-radius: 999px;
+
+      font-size: 0.7rem;
+
+      margin-left: 0.4rem;
+
+      cursor: pointer;
+
+      text-decoration: none;
+
+    }
+
+    .page-title {
+
+      padding: 0 1.4rem;
+
+    }
+
+    h1 {
+
+      font-size: 1.7rem;
+
+      margin-bottom: 0.3rem;
+
+    }
+
+    .subtitle {
+
+      color: var(--muted);
+
+      max-width: 580px;
+
+      line-height: 1.4;
+
+      font-size: 0.9rem;
+
+    }
+
+    .sections {
+
+      padding: 1.2rem 1.4rem 3rem;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 1rem;
+
+    }
+
+    .section-card {
+
+      background: var(--card-bg);
+
+      border-radius: var(--radius-lg);
+
+      padding: 1rem 1.1rem 1.1rem;
+
+      box-shadow: 0 6px 22px rgba(0,0,0,0.03);
+
+    }
+
+    .section-title {
+
+      font-weight: 600;
+
+      margin-bottom: 0.15rem;
+
+    }
+
+    .section-desc {
+
+      color: var(--muted);
+
+      font-size: 0.78rem;
+
+      margin-bottom: 0.7rem;
+
+    }
+
+    .item {
+
+      background: rgba(199,165,89,0.05);
+
+      border-radius: 14px;
+
+      padding: 0.55rem 0.7rem 0.55rem;
+
+      margin-bottom: 0.45rem;
+
+    }
+
+    .item-title {
+
+      font-size: 0.78rem;
+
+      margin-bottom: 0.2rem;
+
+      font-weight: 500;
+
+    }
+
+    .item-actions a {
+
+      font-size: 0.72rem;
+
+      color: #1347b6;
+
+      text-decoration: underline;
+
+    }
+
+    footer {
+
+      text-align: center;
+
+      font-size: 0.65rem;
+
+      color: #8b857e;
+
+      padding: 1.3rem 0 2.5rem;
+
+    }
+
+    @media (min-width: 750px) {
+
+      .sections {
+
+        max-width: 780px;
+
+        margin: 0 auto;
+
+      }
+
+      .topbar, .page-title {
+
+        max-width: 780px;
+
+        margin: 0 auto;
+
+      }
+
+    }
+
+  </style>
 
 </head>
 
-<body class="gallery-page">
+<body>
 
-  <header class="inner-topbar">
+  <header class="topbar">
 
-    <a href="index.html" class="site-title" data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">
+    <div class="brand">New House of Wisdom</div>
 
-      New House of Wisdom
+    <div>
 
-    </a>
+      <a href="archive.html" class="btn-inline">Back</a>
 
-    <div class="inner-actions">
-
-      <a href="index.html" class="outline-btn" data-en="Back" data-ar="رجوع">Back</a>
-
-      <button id="langToggle" class="outline-btn">عربي</button>
+      <a href="#" class="btn-inline">عربي</a>
 
     </div>
 
@@ -36,115 +236,153 @@
 
 
 
-  <main class="inner-content">
+  <main>
 
-    <h1 data-en="Manuscript & Heritage Gallery" data-ar="معرض المخطوطات والتراث">
+    <div class="page-title">
 
-      Manuscript & Heritage Gallery
+      <h1>Manuscript & Heritage Gallery</h1>
 
-    </h1>
+      <p class="subtitle">
 
-    <p class="inner-subtitle"
+        Visual and digitized materials from Baghdad’s Abbasid and Mustansiriya legacy, organized for scholars and students.
 
-       data-en="A visual window onto Abbasid Baghdad and the Mustansiriya."
+      </p>
 
-       data-ar="نافذة بصرية على بغداد العباسية والمدرسة المستنصرية.">
-
-      A visual window onto Abbasid Baghdad and the Mustansiriya.
-
-    </p>
+    </div>
 
 
 
-    <section class="gallery-grid">
+    <div class="sections">
 
-      <!-- Card 1 -->
+      <!-- 1. Illuminated Manuscripts -->
 
-      <article class="gallery-card">
+      <section class="section-card">
 
-        <img src="images/Baghdad_Ms_001.jpg" alt="Manuscript 1" onerror="this.style.display='none'">
+        <div class="section-title">Illuminated Manuscripts</div>
 
-        <h2 data-en="Manuscript 1" data-ar="مخطوطة ١">Manuscript 1</h2>
+        <div class="section-desc">Digitized folios, ornamented pages, and codices produced in Baghdad.</div>
 
-        <p data-en="Early Abbasid manuscript, digitized." data-ar="مخطوطة عباسية مبكرة رقمية.">
+        <div class="item">
 
-          Early Abbasid manuscript, digitized.
+          <div class="item-title">Baghdad_Illuminated_Folio_001.jpg</div>
 
-        </p>
+          <div class="item-actions">
 
-        <a href="images/Baghdad_Ms_001.jpg" class="gold-btn" download
+            <a href="#">Download</a>
 
-           data-en="Download" data-ar="تنزيل">Download</a>
+          </div>
 
-      </article>
+        </div>
 
+        <div class="item">
 
+          <div class="item-title">Qurʾanic_Mashhad_Page_Abbasid.jpg</div>
 
-      <!-- Card 2 -->
+          <div class="item-actions">
 
-      <article class="gallery-card">
+            <a href="#">Download</a>
 
-        <img src="images/Baghdad_Ms_002.jpg" alt="Manuscript 2" onerror="this.style.display='none'">
+          </div>
 
-        <h2 data-en="Manuscript 2" data-ar="مخطوطة ٢">Manuscript 2</h2>
+        </div>
 
-        <p data-en="Scientific notes from Baghdad." data-ar="مذكرات علمية من بغداد.">
-
-          Scientific notes from Baghdad.
-
-        </p>
-
-        <a href="images/Baghdad_Ms_002.jpg" class="gold-btn" download
-
-           data-en="Download" data-ar="تنزيل">Download</a>
-
-      </article>
+      </section>
 
 
 
-      <!-- تضيف نسخ من الكارد هذا لأي صورة جديدة ترفعها -->
+      <!-- 2. Scientific & Philosophical Treatises -->
 
-    </section>
+      <section class="section-card">
+
+        <div class="section-title">Scientific &amp; Philosophical Treatises</div>
+
+        <div class="section-desc">Visual records of medical, mathematical, and logical works copied or translated in Baghdad.</div>
+
+        <div class="item">
+
+          <div class="item-title">Hunayn_Medicine_Notes.jpg</div>
+
+          <div class="item-actions">
+
+            <a href="#">Download</a>
+
+          </div>
+
+        </div>
+
+        <div class="item">
+
+          <div class="item-title">Euclid_Arabic_Diagrams.png</div>
+
+          <div class="item-actions">
+
+            <a href="#">Download</a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 3. House of Wisdom Artifacts -->
+
+      <section class="section-card">
+
+        <div class="section-title">House of Wisdom Artifacts</div>
+
+        <div class="section-desc">Reconstructed images, maps, and architectural references to the Bayt al-Hikma.</div>
+
+        <div class="item">
+
+          <div class="item-title">Bayt_al_Hikma_Reconstruction_2025.jpg</div>
+
+          <div class="item-actions">
+
+            <a href="#">Download</a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 4. Mustansiriya Heritage -->
+
+      <section class="section-card">
+
+        <div class="section-title">Mustansiriya Heritage</div>
+
+        <div class="section-desc">Archival visuals of the Mustansiriya complex, façades, and inscriptions.</div>
+
+        <div class="item">
+
+          <div class="item-title">Mustansiriya_Facade_01.jpg</div>
+
+          <div class="item-actions">
+
+            <a href="#">Download</a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
 
   </main>
 
 
 
-  <footer class="inner-footer">
+  <footer>
 
     © New House of Wisdom | Baghdad Digital Heritage 2025
 
   </footer>
-
-
-
-  <script>
-
-    const toggle = document.getElementById('langToggle');
-
-    function setLang(lang) {
-
-      document.documentElement.setAttribute('data-lang', lang);
-
-      toggle.textContent = lang === 'en' ? 'عربي' : 'English';
-
-      document.querySelectorAll('[data-en]').forEach(el => {
-
-        el.textContent = lang === 'en' ? el.dataset.en : el.dataset.ar;
-
-      });
-
-    }
-
-    toggle.addEventListener('click', () => {
-
-      const current = document.documentElement.getAttribute('data-lang') || 'en';
-
-      setLang(current === 'en' ? 'ar' : 'en');
-
-    });
-
-  </script>
 
 </body>
 
