@@ -16,15 +16,15 @@
 
 <body class="archive-page">
 
-  <header class="topbar">
+  <header class="subtop">
 
-    <div class="brand"><a href="index.html">New House of Wisdom</a></div>
+    <a href="index.html" class="logo-link">New House of Wisdom</a>
 
-    <div class="actions">
+    <div class="subtop-actions">
 
-      <a href="index.html" class="ghost-btn">Back</a>
+      <a href="index.html" class="outline-btn" data-i18n="back">Back</a>
 
-      <button id="langToggle" class="lang-btn">عربي</button>
+      <button class="lang-toggle outline-btn" id="langToggle">عربي</button>
 
     </div>
 
@@ -34,11 +34,9 @@
 
   <main class="archive-shell">
 
-    <h1 data-en="Digital Archive" data-ar="الأرشيف الرقمي">Digital Archive</h1>
+    <h1 class="archive-title" data-i18n="archive_title">Digital Archive</h1>
 
-    <p class="archive-lead" data-en="Curated materials from Baghdad’s Abbasid and Mustansiriya heritage."
-
-       data-ar="مواد رقمية مختارة من الإرث العباسي والبغدادي والمدرسة المستنصرية.">
+    <p class="archive-lead" data-i18n="archive_lead">
 
       Curated materials from Baghdad’s Abbasid and Mustansiriya heritage.
 
@@ -46,117 +44,157 @@
 
 
 
-    <!-- Section 1 -->
+    <!-- 1. Translations -->
 
-    <section class="archive-block">
+    <section class="archive-block" id="translations">
 
-      <h2 data-en="Translations &amp; Scientific Texts" data-ar="الترجمات والنصوص العلمية">
+      <div class="archive-block-header">
 
-        Translations &amp; Scientific Texts
+        <h2 data-i18n="sec_translations">Translations &amp; Scientific Texts</h2>
 
-      </h2>
+        <p data-i18n="sec_translations_desc">
 
-      <p data-en="Texts translated in Baghdad during the Golden Age."
+          Texts translated in Baghdad during the Golden Age.
 
-         data-ar="نصوص تُرجمت في بغداد خلال العصر العباسي.">
-
-        Texts translated in Baghdad during the Golden Age.
-
-      </p>
-
-
-
-      <div class="archive-item">
-
-        <span>Euclid_Arabic_Intro.pdf</span>
-
-        <a href="files/Euclid_Arabic_Intro.pdf" class="download-btn">Download</a>
+        </p>
 
       </div>
 
-      <div class="archive-item">
+      <ul class="archive-list">
 
-        <span>Galen_Medicine_Notes.pdf</span>
+        <li class="archive-item">
 
-        <a href="files/Galen_Medicine_Notes.pdf" class="download-btn">Download</a>
+          <span class="file-name">Euclid_Arabic_Intro.pdf</span>
 
-      </div>
+          <a href="files/Euclid_Arabic_Intro.pdf" class="primary-btn small" download data-i18n="download">Download</a>
+
+        </li>
+
+        <li class="archive-item">
+
+          <span class="file-name">Galen_Medicine_Notes.pdf</span>
+
+          <a href="files/Galen_Medicine_Notes.pdf" class="primary-btn small" download data-i18n="download">Download</a>
+
+        </li>
+
+      </ul>
 
     </section>
 
 
 
-    <!-- Section 2 -->
+    <!-- 2. Manuscripts -->
 
-    <section class="archive-block">
+    <section class="archive-block" id="manuscripts">
 
-      <h2 data-en="Manuscripts" data-ar="المخطوطات">Manuscripts</h2>
+      <div class="archive-block-header">
 
-      <p data-en="High-quality digitized manuscripts, indexed by topic, date, and author."
+        <h2 data-i18n="sec_manuscripts">Manuscripts</h2>
 
-         data-ar="مخطوطات رقمية عالية الجودة، مفهرسة حسب الموضوع والتاريخ والمؤلف.">
+        <p data-i18n="sec_manuscripts_desc">
 
-        High-quality digitized manuscripts, indexed by topic, date, and author.
+          High-quality digitized manuscripts, indexed by topic, date, and author.
 
-      </p>
-
-
-
-      <div class="archive-item">
-
-        <span>Baghdad_Ms_001.jpg</span>
-
-        <a href="files/Baghdad_Ms_001.jpg" class="download-btn">Download</a>
+        </p>
 
       </div>
 
-      <div class="archive-item">
+      <ul class="archive-list">
 
-        <span>Baghdad_Ms_002.jpg</span>
+        <li class="archive-item">
 
-        <a href="files/Baghdad_Ms_002.jpg" class="download-btn">Download</a>
+          <span class="file-name">Baghdad_Ms_001.jpg</span>
 
-      </div>
+          <a href="files/Baghdad_Ms_001.jpg" class="primary-btn small" download data-i18n="download">Download</a>
+
+        </li>
+
+        <li class="archive-item">
+
+          <span class="file-name">Baghdad_Ms_002.jpg</span>
+
+          <a href="files/Baghdad_Ms_002.jpg" class="primary-btn small" download data-i18n="download">Download</a>
+
+        </li>
+
+      </ul>
 
     </section>
 
 
 
-    <!-- Section 3 -->
+    <!-- 3. Mustansiriya -->
 
-    <section class="archive-block">
+    <section class="archive-block" id="mustansiriya">
 
-      <h2 data-en="Mustansiriya Heritage" data-ar="تراث المدرسة المستنصرية">
+      <div class="archive-block-header">
 
-        Mustansiriya Heritage
+        <h2 data-i18n="sec_mustansiriya">Mustansiriya Heritage</h2>
 
-      </h2>
+        <p data-i18n="sec_mustansiriya_desc">
 
-      <p data-en="Visual and textual materials about the Mustansiriya School on the Tigris."
+            Visual and textual materials about the Mustansiriya School on the Tigris.
 
-         data-ar="مواد بصرية ونصية عن المدرسة المستنصرية على دجلة.">
-
-        Visual and textual materials about the Mustansiriya School on the Tigris.
-
-      </p>
-
-
-
-      <div class="archive-item">
-
-        <span>Mustansiriya_Photos.zip</span>
-
-        <a href="files/Mustansiriya_Photos.zip" class="download-btn">Download</a>
+        </p>
 
       </div>
 
-      <div class="archive-item">
+      <ul class="archive-list">
 
-        <span>Mustansiriya_History.pdf</span>
+        <li class="archive-item">
 
-        <a href="files/Mustansiriya_History.pdf" class="download-btn">Download</a>
+          <span class="file-name">Mustansiriya_Photos.zip</span>
+
+          <a href="files/Mustansiriya_Photos.zip" class="primary-btn small" download data-i18n="download">Download</a>
+
+        </li>
+
+        <li class="archive-item">
+
+          <span class="file-name">Mustansiriya_History.pdf</span>
+
+          <a href="files/Mustansiriya_History.pdf" class="primary-btn small" download data-i18n="download">Download</a>
+
+        </li>
+
+      </ul>
+
+    </section>
+
+
+
+    <!-- 4. Books -->
+
+    <section class="archive-block" id="books">
+
+      <div class="archive-block-header">
+
+        <h2 data-i18n="sec_books">Books &amp; Modern Studies</h2>
+
+        <p data-i18n="sec_books_desc">
+
+          Later publications, orientalists’ works, and Arabic books on Abbasid Baghdad and the House of Wisdom.
+
+        </p>
 
       </div>
+
+      <ul class="archive-list">
+
+        <!-- مثال كتاب — امسحه أو كرّره -->
+
+        <li class="archive-item">
+
+          <span class="file-name">House_of_Wisdom_Research_2021.pdf</span>
+
+          <a href="files/House_of_Wisdom_Research_2021.pdf" class="primary-btn small" download data-i18n="download">Download</a>
+
+        </li>
+
+        <!-- تقدر بعدين تضيف هنا كتب مستشرقين -->
+
+      </ul>
 
     </section>
 
@@ -164,7 +202,7 @@
 
 
 
-  <footer class="page-footer">
+  <footer class="site-footer light">
 
     © New House of Wisdom | Baghdad Digital Heritage 2025
 
@@ -172,7 +210,81 @@
 
 
 
-  <script src="lang.js"></script>
+  <script>
+
+    // تبديل اللغة بسيط لنفس المفاتيح
+
+    const langBtn = document.getElementById('langToggle');
+
+    const i18nMap = {
+
+      ar: {
+
+        back: "رجوع",
+
+        archive_title: "الأرشيف الرقمي",
+
+        archive_lead: "مواد رقمية منتقاة من التراث العباسي والمستنصرية في بغداد.",
+
+        sec_translations: "الترجمات والنصوص العلمية",
+
+        sec_translations_desc: "نصوص تُرجمت في بغداد في عصر الازدهار العباسي.",
+
+        sec_manuscripts: "المخطوطات",
+
+        sec_manuscripts_desc: "مخطوطات رقمية عالية الجودة، مفهرسة حسب الموضوع والتاريخ والمؤلف.",
+
+        sec_mustansiriya: "تراث المدرسة المستنصرية",
+
+        sec_mustansiriya_desc: "مواد نصية وبصرية عن المدرسة المستنصرية على دجلة.",
+
+        sec_books: "الكتب والدراسات الحديثة",
+
+        sec_books_desc: "كتب ودراسات لاحقة عن بغداد العباسية وبيت الحكمة، عربية وأجنبية.",
+
+        download: "تحميل"
+
+      }
+
+    };
+
+    let current = 'en';
+
+    langBtn.addEventListener('click', () => {
+
+      current = current === 'en' ? 'ar' : 'en';
+
+      if (current === 'ar') {
+
+        langBtn.textContent = "EN";
+
+        document.body.dir = "rtl";
+
+        document.querySelector('.archive-shell').classList.add('rtl');
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+
+          const key = el.getAttribute('data-i18n');
+
+          el.textContent = i18nMap.ar[key] || el.textContent;
+
+        });
+
+      } else {
+
+        langBtn.textContent = "عربي";
+
+        document.body.dir = "ltr";
+
+        document.querySelector('.archive-shell').classList.remove('rtl');
+
+        location.reload(); // أبسط طريقة نرجع للإنجليزي
+
+      }
+
+    });
+
+  </script>
 
 </body>
 
