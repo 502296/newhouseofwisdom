@@ -70,6 +70,8 @@
 
       text-decoration: none;
 
+      cursor: pointer;
+
     }
 
     .page-title { padding: 0 1.4rem; }
@@ -144,13 +146,13 @@
 
   <header class="topbar">
 
-    <div class="brand">New House of Wisdom</div>
+    <div class="brand" data-en="New House of Wisdom" data-ar="دار الحكمة الجديدة">New House of Wisdom</div>
 
     <div>
 
-      <a href="index.html" class="btn-inline">Back</a>
+      <a href="index.html" class="btn-inline" data-en="Back" data-ar="رجوع">Back</a>
 
-      <a href="#" class="btn-inline">عربي</a>
+      <button id="langBtn" class="btn-inline">عربي</button>
 
     </div>
 
@@ -162,9 +164,17 @@
 
     <div class="page-title">
 
-      <h1>Digital Archive</h1>
+      <h1 data-en="Digital Archive" data-ar="الأرشيف الرقمي">Digital Archive</h1>
 
-      <p class="subtitle">Curated materials from Baghdad’s Abbasid and Mustansiriya heritage.</p>
+      <p class="subtitle"
+
+         data-en="Curated materials from Baghdad’s Abbasid and Mustansiriya heritage."
+
+         data-ar="مواد منتقاة من التراث العباسي والمستنصري في بغداد.">
+
+        Curated materials from Baghdad’s Abbasid and Mustansiriya heritage.
+
+      </p>
 
     </div>
 
@@ -172,11 +182,29 @@
 
     <div class="sections">
 
+      <!-- 1 -->
+
       <section class="section-card">
 
-        <div class="section-title">Translations &amp; Scientific Texts</div>
+        <div class="section-title"
 
-        <div class="section-desc">Texts translated in Baghdad during the Golden Age.</div>
+             data-en="Translations &amp; Scientific Texts"
+
+             data-ar="الترجمات والنصوص العلمية">
+
+          Translations &amp; Scientific Texts
+
+        </div>
+
+        <div class="section-desc"
+
+             data-en="Texts translated in Baghdad during the Golden Age."
+
+             data-ar="نصوص تُرجمت في بغداد خلال العصر الذهبي.">
+
+          Texts translated in Baghdad during the Golden Age.
+
+        </div>
 
         <div class="item">
 
@@ -198,11 +226,21 @@
 
 
 
+      <!-- 2 -->
+
       <section class="section-card">
 
-        <div class="section-title">Manuscripts</div>
+        <div class="section-title" data-en="Manuscripts" data-ar="المخطوطات">Manuscripts</div>
 
-        <div class="section-desc">High-quality digitized manuscripts, indexed by topic, date, and author.</div>
+        <div class="section-desc"
+
+             data-en="High-quality digitized manuscripts, indexed by topic, date, and author."
+
+             data-ar="مخطوطات رقمية عالية الجودة، مفهرسة حسب الموضوع والتاريخ والمؤلف.">
+
+          High-quality digitized manuscripts, indexed by topic, date, and author.
+
+        </div>
 
         <div class="item">
 
@@ -224,11 +262,25 @@
 
 
 
+      <!-- 3 -->
+
       <section class="section-card">
 
-        <div class="section-title">Mustansiriya Heritage</div>
+        <div class="section-title" data-en="Mustansiriya Heritage" data-ar="تراث المستنصرية">
 
-        <div class="section-desc">Visual and textual materials about the Mustansiriya School on the Tigris.</div>
+          Mustansiriya Heritage
+
+        </div>
+
+        <div class="section-desc"
+
+             data-en="Visual and textual materials about the Mustansiriya School on the Tigris."
+
+             data-ar="مواد بصرية ونصية عن المدرسة المستنصرية على دجلة.">
+
+          Visual and textual materials about the Mustansiriya School on the Tigris.
+
+        </div>
 
         <div class="item">
 
@@ -250,11 +302,25 @@
 
 
 
+      <!-- 4 -->
+
       <section class="section-card">
 
-        <div class="section-title">Books &amp; Modern Studies</div>
+        <div class="section-title" data-en="Books &amp; Modern Studies" data-ar="كتب ودراسات حديثة">
 
-        <div class="section-desc">Later publications and orientalist works about Abbasid Baghdad and the House of Wisdom.</div>
+          Books &amp; Modern Studies
+
+        </div>
+
+        <div class="section-desc"
+
+             data-en="Later publications and orientalist works about Abbasid Baghdad and the House of Wisdom."
+
+             data-ar="منشورات متأخرة وأعمال استشراقية عن بغداد العباسية وبيت الحكمة.">
+
+          Later publications and orientalist works about Abbasid Baghdad and the House of Wisdom.
+
+        </div>
 
         <div class="item">
 
@@ -272,7 +338,39 @@
 
 
 
-  <footer>© New House of Wisdom | Baghdad Digital Heritage 2025</footer>
+  <footer>
+
+    © New House of Wisdom | Baghdad Digital Heritage 2025
+
+  </footer>
+
+
+
+  <script>
+
+    const btn = document.getElementById('langBtn');
+
+    let current = 'en';
+
+
+
+    btn.addEventListener('click', () => {
+
+      current = current === 'en' ? 'ar' : 'en';
+
+      document.querySelectorAll('[data-en]').forEach(el => {
+
+        el.textContent = el.getAttribute(current === 'en' ? 'data-en' : 'data-ar');
+
+      });
+
+      btn.textContent = current === 'en' ? 'عربي' : 'English';
+
+      document.documentElement.lang = current === 'en' ? 'en' : 'ar';
+
+    });
+
+  </script>
 
 </body>
 
