@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-lang="en">
 
 <head>
 
@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Gallery – New House of Wisdom</title>
+  <title>Manuscript & Heritage Gallery – New House of Wisdom</title>
 
   <link rel="stylesheet" href="style.css" />
 
@@ -16,15 +16,19 @@
 
 <body class="gallery-page">
 
-  <header class="topbar">
+  <header class="inner-topbar">
 
-    <div class="brand"><a href="index.html">New House of Wisdom</a></div>
+    <a href="index.html" class="site-title" data-en="New House of Wisdom" data-ar="بيت الحكمة الجديد">
 
-    <div class="actions">
+      New House of Wisdom
 
-      <a href="index.html" class="ghost-btn">Back</a>
+    </a>
 
-      <button id="langToggle" class="lang-btn">عربي</button>
+    <div class="inner-actions">
+
+      <a href="index.html" class="outline-btn" data-en="Back" data-ar="رجوع">Back</a>
+
+      <button id="langToggle" class="outline-btn">عربي</button>
 
     </div>
 
@@ -32,7 +36,7 @@
 
 
 
-  <main class="gallery-shell">
+  <main class="inner-content">
 
     <h1 data-en="Manuscript & Heritage Gallery" data-ar="معرض المخطوطات والتراث">
 
@@ -40,51 +44,73 @@
 
     </h1>
 
-    <p class="gallery-lead"
+    <p class="inner-subtitle"
 
        data-en="A visual window onto Abbasid Baghdad and the Mustansiriya."
 
        data-ar="نافذة بصرية على بغداد العباسية والمدرسة المستنصرية.">
 
-       A visual window onto Abbasid Baghdad and the Mustansiriya.
+      A visual window onto Abbasid Baghdad and the Mustansiriya.
 
     </p>
 
 
 
-    <div class="gallery-grid">
+    <section class="gallery-grid">
 
-      <!-- كرر هذا البلوك لكل صورة -->
+      <!-- Card 1 -->
 
-      <figure class="gallery-card">
+      <article class="gallery-card">
 
-        <img src="images/Baghdad_Ms_001.jpg" alt="Manuscript 1" />
+        <img src="images/Baghdad_Ms_001.jpg" alt="Manuscript 1" onerror="this.style.display='none'">
 
-        <figcaption data-en="Manuscript 1" data-ar="مخطوطة ١">Manuscript 1</figcaption>
+        <h2 data-en="Manuscript 1" data-ar="مخطوطة ١">Manuscript 1</h2>
 
-      </figure>
+        <p data-en="Early Abbasid manuscript, digitized." data-ar="مخطوطة عباسية مبكرة رقمية.">
+
+          Early Abbasid manuscript, digitized.
+
+        </p>
+
+        <a href="images/Baghdad_Ms_001.jpg" class="gold-btn" download
+
+           data-en="Download" data-ar="تنزيل">Download</a>
+
+      </article>
 
 
 
-      <figure class="gallery-card">
+      <!-- Card 2 -->
 
-        <img src="images/Baghdad_Ms_002.jpg" alt="Manuscript 2" />
+      <article class="gallery-card">
 
-        <figcaption data-en="Manuscript 2" data-ar="مخطوطة ٢">Manuscript 2</figcaption>
+        <img src="images/Baghdad_Ms_002.jpg" alt="Manuscript 2" onerror="this.style.display='none'">
 
-      </figure>
+        <h2 data-en="Manuscript 2" data-ar="مخطوطة ٢">Manuscript 2</h2>
+
+        <p data-en="Scientific notes from Baghdad." data-ar="مذكرات علمية من بغداد.">
+
+          Scientific notes from Baghdad.
+
+        </p>
+
+        <a href="images/Baghdad_Ms_002.jpg" class="gold-btn" download
+
+           data-en="Download" data-ar="تنزيل">Download</a>
+
+      </article>
 
 
 
-      <!-- تقدر تضيف قد ما تريد بنفس الشكل -->
+      <!-- تضيف نسخ من الكارد هذا لأي صورة جديدة ترفعها -->
 
-    </div>
+    </section>
 
   </main>
 
 
 
-  <footer class="page-footer">
+  <footer class="inner-footer">
 
     © New House of Wisdom | Baghdad Digital Heritage 2025
 
@@ -92,7 +118,33 @@
 
 
 
-  <script src="lang.js"></script>
+  <script>
+
+    const toggle = document.getElementById('langToggle');
+
+    function setLang(lang) {
+
+      document.documentElement.setAttribute('data-lang', lang);
+
+      toggle.textContent = lang === 'en' ? 'عربي' : 'English';
+
+      document.querySelectorAll('[data-en]').forEach(el => {
+
+        el.textContent = lang === 'en' ? el.dataset.en : el.dataset.ar;
+
+      });
+
+    }
+
+    toggle.addEventListener('click', () => {
+
+      const current = document.documentElement.getAttribute('data-lang') || 'en';
+
+      setLang(current === 'en' ? 'ar' : 'en');
+
+    });
+
+  </script>
 
 </body>
 
